@@ -62,7 +62,8 @@ I design and deploy **end-to-end AI pipelines** — from RAG systems and content
 
 ## 🤝 Let’s work together
 
-[![LinkedIn](https://raw.githubusercontent.com/onwurahben/portfolio/main/Images/LinkedIn%20(icon%20%E2%80%94%20Colour).png)](https://www.linkedin.com/in/ben-onwurah/)
-[![Twitter](https://raw.githubusercontent.com/onwurahben/portfolio/main/Images/Twitter%20(icon%20%E2%80%94%20Colour).png)](https://twitter.com/_flutterbaby)
+[![LinkedIn](Images/linkedin.png)](https://www.linkedin.com/in/ben-onwurah/)
+[![Twitter](Images/twitter.png)](https://twitter.com/_flutterbaby)
+
 
 
