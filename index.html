@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,77 +8,194 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-visual">
-      <img src="images/banner.svg" alt="Abstract AI systems visual">
-    </div>
-    
-    <div class="hero-content">
-      <h1>I build production-ready AI systems, not demos.</h1>
-      <p>
-        AI automation, LLM apps, and internal tools for startups and teams
-        that want leverage — not hype.
-      </p>
+  <section class="hero reveal">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="section-id">CORE_SYSTEM_01</span>
+        <h1 class="reveal delay-1">I build production-ready <br>AI systems, not demos.</h1>
+        <p class="reveal delay-2">
+          <span class="meta-tag">v2.0.26</span>
+          AI automation, LLM apps, and internal tools for startups and teams
+          that want leverage — not hype.
+        </p>
+        <a href="#projects" class="btn-primary reveal delay-3">View selected work</a>
+      </div>
 
-      <a href="#projects" class="btn-primary">View selected work</a>
+      <div class="profile-card reveal delay-2">
+        <div class="profile-frame">
+          <div class="profile-img-container">
+            <img src="https://via.placeholder.com/300" alt="Ben Onwurah"
+              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\' viewBox=\'0 0 48 48\'%3E%3Crect width=\'48\' height=\'48\' fill=\'%23eee\'/%3E%3Ccircle cx=\'24\' cy=\'20\' r=\'8\' fill=\'%23ccc\'/%3E%3Cpath d=\'M10,40 Q24,30 38,40\' stroke=\'%23ccc\' stroke-width=\'2\' fill=\'none\'/%3E%3C/svg%3E'">
+          </div>
+        </div>
+        <div class="profile-meta">
+          <span class="name">Ben Onwurah</span>
+          <span class="status">USER_ID: 742_SYS</span>
+          <span class="status">STATUS: AVAILABLE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="images/hero-bg.svg" alt="Abstract organic shapes background">
     </div>
   </section>
+
+  <div class="divider reveal">
+    <span class="meta-tag">NAV_GATE</span>
+    <div class="line"></div>
+    <span>CAPABILITIES_ARCHIVE</span>
+  </div>
+
+  <!-- CAPABILITIES / SERVICES -->
+  <section class="capabilities reveal">
+    <span class="section-id">CAPABILITY_SYNC_01</span>
+    <h2>Expertise</h2>
+    <div class="capability-grid">
+      <div class="capability-card reveal delay-1">
+        <span class="meta-tag">AI_OPS</span>
+        <h3>LLM Orchestration</h3>
+        <p>Building robust pipelines for LLM deployment, evaluation, and scaling in production environments.</p>
+      </div>
+      <div class="capability-card reveal delay-2">
+        <span class="meta-tag">RAG_SYS</span>
+        <h3>RAG Architecture</h3>
+        <p>Designing high-accuracy retrieval systems with vector databases and advanced reranking strategies.</p>
+      </div>
+      <div class="capability-card reveal delay-3">
+        <h3>Voice & Audio AI</h3>
+        <p>Real-time speech-to-speech systems integrating low-latency transcription and synthesis.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider reveal">
+    <span class="meta-tag">NAV_GATE</span>
+    <div class="line"></div>
+    <span>PROJECT_ARCHIVE</span>
+  </div>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
-    <h2>Selected work</h2>
+    <span class="section-id">ARCHIVE_INDEX_02</span>
+    <h2 class="reveal">Selected work</h2>
 
     <div class="project-grid">
 
-      <a class="project-card" href="projects/rag-assistant.html">
-        <h3>RAG Internal Assistant</h3>
+      <a class="project-card reveal" href="projects/docquery.html">
+        <div class="project-image">
+          <img src="rag_thumbnail_1769762353220.png" alt="DocQuery abstract diagram">
+        </div>
+        <span class="meta-tag">RAG_01</span>
+        <span>Python · RAG · LLMs</span>
+        <h3>DocQuery Assistant</h3>
         <p>Cut internal search time by 70% using retrieval-augmented generation.</p>
-        <span>Python · RAG · LLMs · Docker</span>
       </a>
 
-      <a class="project-card" href="projects/voice-bot.html">
+      <a class="project-card reveal" href="projects/voice-bot.html">
+        <div class="project-image">
+          <img src="voice_thumbnail_1769762411015.png" alt="Voice AI abstract soundwave">
+        </div>
+        <span class="meta-tag">VOX_02</span>
+        <span>Whisper · TTS · APIs</span>
         <h3>Voice AI Assistant</h3>
         <p>Real-time speech-to-speech assistant with low-latency LLM inference.</p>
-        <span>Whisper · TTS · Python · APIs</span>
       </a>
 
-      <a class="project-card" href="projects/linkedin-ai.html">
-        <h3>LinkedIn AI Content System</h3>
+      <a class="project-card reveal" href="projects/redraft.html">
+        <div class="project-image">
+          <img src="linkedin_thumbnail_1769762493717.png" alt="Redraft abstract network">
+        </div>
+        <span class="meta-tag">GEN_03</span>
+        <span>LLMs · Automation</span>
+        <h3>Redraft Content System</h3>
         <p>End-to-end content generation, evaluation, and approval pipeline.</p>
-        <span>LLMs · Automation · Prompt Engineering</span>
       </a>
 
-      <a class="project-card" href="projects/capstone.html">
-        <h3>IBM Generative AI Capstone</h3>
-        <p>Production-grade AI application built with scalable architecture.</p>
+      <a class="project-card reveal" href="projects/meeting-bot.html">
+        <div class="project-image">
+          <img src="capstone_thumbnail_1769762573786.png" alt="Meeting Bot abstract architecture">
+        </div>
+        <span class="meta-tag">SYS_04</span>
         <span>Python · Cloud · AI Engineering</span>
+        <h3>Meeting Analysis Bot</h3>
+        <p>Production-grade AI application built with scalable architecture.</p>
       </a>
 
     </div>
   </section>
 
+  <div class="divider reveal">
+    <span class="meta-tag">SYS_CHECK</span>
+    <div class="line"></div>
+    <span>INFRA_STACK</span>
+  </div>
+
+  <!-- THE STACK / SKILLS -->
+  <section class="stack-section reveal">
+    <span class="section-id">INFRASTRUCTURE_04</span>
+    <h2>Technical Stack</h2>
+    <div class="stack-tier">
+      <h4>Models & Frameworks</h4>
+      <div class="stack-tags">
+        <span class="meta-tag">GPT-4</span>
+        <span class="meta-tag">Claude 3</span>
+        <span class="meta-tag">PyTorch</span>
+        <span class="meta-tag">HuggingFace</span>
+        <span class="meta-tag">LangChain</span>
+      </div>
+    </div>
+    <div class="stack-tier">
+      <h4>Data & Search</h4>
+      <div class="stack-tags">
+        <span class="meta-tag">Pinecone</span>
+        <span class="meta-tag">Weaviate</span>
+        <span class="meta-tag">PostgreSQL</span>
+        <span class="meta-tag">Elasticsearch</span>
+      </div>
+    </div>
+    <div class="stack-tier">
+      <h4>Engineering</h4>
+      <div class="stack-tags">
+        <span class="meta-tag">Python</span>
+        <span class="meta-tag">Docker</span>
+        <span class="meta-tag">AWS</span>
+        <span class="meta-tag">TypeScript</span>
+        <span class="meta-tag">React</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider reveal">
+    <span class="meta-tag">SYS_CHECK</span>
+    <div class="line"></div>
+    <span>PRINCIPLE_CORE</span>
+  </div>
+
   <!-- HOW I BUILD -->
-  <section class="philosophy">
+  <section class="philosophy reveal">
+    <span class="section-id">PRINCIPLE_CORE_03</span>
     <h2>How I build</h2>
 
     <ul>
-      <li>I design AI systems that survive real users, not just demos.</li>
-      <li>I prefer simple architectures with clear failure modes.</li>
-      <li>I optimize for cost, reliability, and maintainability — in that order.</li>
+      <li class="reveal delay-1">I design AI systems that survive real users, not just demos.</li>
+      <li class="reveal delay-2">I prefer simple architectures with clear failure modes.</li>
+      <li class="reveal delay-3">I optimize for cost, reliability, and maintainability.</li>
     </ul>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="reveal">
     <p>© 2026 Ben Onwurah</p>
     <div class="links">
       <a href="https://github.com/onwurahben" target="_blank">GitHub</a>
@@ -86,5 +204,37 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => observer.observe(el));
+
+      // Fallback for elements already in view
+      setTimeout(() => {
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('active');
+          }
+        });
+      }, 100);
+    });
+  </script>
+
 </body>
+
 </html>

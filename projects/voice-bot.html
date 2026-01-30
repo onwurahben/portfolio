@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice AI Assistant — Ben Onwurah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="project-detail-body">
+
+    <a href="../index.html" class="back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to archive
+    </a>
+
+    <header class="project-hero reveal">
+        <span class="section-id">VOICE_SYSTEM / 02</span>
+        <h1>Voice AI Assistant</h1>
+
+        <div class="project-meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>AI Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Focus</h5>
+                <p>Real-time Audio & TTS</p>
+            </div>
+            <div class="meta-item">
+                <h5>Stack</h5>
+                <p>Whisper, Deepgram, ElevenLabs</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-showcase reveal">
+        <img src="../voice_thumbnail_1769762411015.png" alt="Voice AI Soundwave Analysis">
+    </section>
+
+    <main class="project-content-grid">
+        <div class="main-content reveal">
+            <h2>The Challenge</h2>
+            <p>Traditional voice assistants suffer from high latency and robotic delivery, making natural conversation
+                difficult for users.</p>
+
+            <h2>The Solution</h2>
+            <p>I built a real-time speech-to-speech assistant that optimizes every layer of the stack—from high-speed
+                transcription to low-latency LLM inference and expressive synthesis.</p>
+        </div>
+
+        <aside class="detail-sidebar reveal delay-1">
+            <div class="sidebar-item">
+                <h6>Performance</h6>
+                <p>
+                    < 800ms end-to-end latency</p>
+            </div>
+            <div class="sidebar-item">
+                <h6>Core Tech</h6>
+                <p>Custom streaming pipeline using WebSockets for real-time duplex communication.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Ben Onwurah</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

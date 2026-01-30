@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocQuery Assistant — Ben Onwurah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="project-detail-body">
+
+    <a href="../index.html" class="back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to archive
+    </a>
+
+    <header class="project-hero reveal">
+        <span class="section-id">SYSTEM_DESIGN / 01</span>
+        <h1>DocQuery Assistant</h1>
+
+        <div class="project-meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>AI Systems Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Focus</h5>
+                <p>RAG & Information Retrieval</p>
+            </div>
+            <div class="meta-item">
+                <h5>Stack</h5>
+                <p>Python, OpenAI, Pinecone</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-showcase reveal">
+        <img src="../rag_thumbnail_1769762353220.png" alt="DocQuery Visual Interface">
+    </section>
+
+    <main class="project-content-grid">
+        <div class="main-content reveal">
+            <h2>The Challenge</h2>
+            <p>Internal documentation at large organizations is often fragmented across multiple platforms, making it
+                nearly impossible for employees to find specific answers quickly.</p>
+
+            <h2>The Solution</h2>
+            <p>I developed DocQuery, a retrieval-augmented generation (RAG) system that indexes internal docs into a
+                vector database. Using advanced reranking and semantic search, it provides instant, cited answers to
+                complex queries.</p>
+        </div>
+
+        <aside class="detail-sidebar reveal delay-1">
+            <div class="sidebar-item">
+                <h6>Key Metric</h6>
+                <p>70% reduction in search time</p>
+            </div>
+            <div class="sidebar-item">
+                <h6>Infrastructure</h6>
+                <p>Deployed as a scalable microservice with FastAPI and Docker.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Ben Onwurah</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

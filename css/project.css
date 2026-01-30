@@ -1,0 +1,160 @@
+/* Project Detail Specific Styles */
+
+/* Scoped Body Background */
+.project-detail-body {
+    background-color: var(--bg-color);
+}
+
+/* Back Navigation Breadcrumb */
+.back-home {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.back-home:hover {
+    opacity: 1;
+    transform: translateX(-5px);
+}
+
+.back-home svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Project Hero Section */
+.project-hero {
+    padding: 12rem 2rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(3.2rem, 10vw, 6.5rem);
+    font-weight: 600;
+    margin-bottom: 3rem;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+}
+
+/* Technical Metadata Grid */
+.project-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.meta-item h5 {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.meta-item p {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Hero Image Showcase */
+.project-showcase {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.project-showcase img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Content Grid (Case Study) */
+.project-content-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 8rem;
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.main-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    color: var(--text-color);
+}
+
+.main-content p {
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+/* Detail Sidebar (Right Column) */
+.detail-sidebar {
+    padding-top: 2rem;
+}
+
+.sidebar-item {
+    margin-bottom: 4rem;
+}
+
+.sidebar-item h6 {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-color);
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-item p {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .project-content-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .back-home {
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .project-hero {
+        padding-top: 8rem;
+    }
+}

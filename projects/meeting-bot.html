@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Analysis Bot — Ben Onwurah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="project-detail-body">
+
+    <a href="../index.html" class="back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to archive
+    </a>
+
+    <header class="project-hero reveal">
+        <span class="section-id">AUTOMATION_SYS / 04</span>
+        <h1>Meeting Analysis Bot</h1>
+
+        <div class="project-meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>Cloud AI Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Focus</h5>
+                <p>Enterprise Automation</p>
+            </div>
+            <div class="meta-item">
+                <h5>Stack</h5>
+                <p>AWS Lambda, GPT-4, S3</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-showcase reveal">
+        <img src="../capstone_thumbnail_1769762573786.png" alt="Meeting Bot Architecture">
+    </section>
+
+    <main class="project-content-grid">
+        <div class="main-content reveal">
+            <h2>The Challenge</h2>
+            <p>Following up on long meetings is a major productivity drain. Summary emails often miss critical action
+                items and speaker context.</p>
+
+            <h2>The Solution</h2>
+            <p>This production-grade analysis bot processes meeting transcripts to identify speaker sentiment, key
+                decisions, and automated task assignments for enterprise teams.</p>
+        </div>
+
+        <aside class="detail-sidebar reveal delay-1">
+            <div class="sidebar-item">
+                <h6>Scalability</h6>
+                <p>Serverless architecture handling 1000+ hours monthly</p>
+            </div>
+            <div class="sidebar-item">
+                <h6>Special Feature</h6>
+                <p>Automated Jira integration for action item tracking.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Ben Onwurah</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
