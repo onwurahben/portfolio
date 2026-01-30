@@ -5,7 +5,7 @@
   --accent-color: #9d8df1;
   --font-serif: 'Fraunces', serif;
   --font-sans: 'Outfit', sans-serif;
-  --grain-opacity: 0.1;
+  --grain-opacity: 0.14;
 }
 
 /* Reset & base */
@@ -51,7 +51,7 @@ body::after {
   height: 100%;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.03;
+  opacity: 0.05;
   background-image:
     linear-gradient(to right, #1a1a1a 1px, transparent 1px),
     linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);

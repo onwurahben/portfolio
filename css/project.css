@@ -84,11 +84,24 @@
     padding: 0 2rem;
 }
 
-.project-showcase img {
+.project-showcase img,
+.project-showcase video {
     width: 100%;
     border-radius: 4px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-showcase.dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .project-showcase.dual {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Content Grid (Case Study) */
