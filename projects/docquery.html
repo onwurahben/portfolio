@@ -45,7 +45,7 @@
         </div>
     </header>
 
-    <section class="project-showcase reveal">
+    <section class="project-showcase">
         <video autoplay loop muted playsinline>
             <source src="../images/rag-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -54,14 +54,17 @@
 
     <main class="project-content-grid">
         <div class="main-content reveal">
-            <h2>The Challenge</h2>
-            <p>Internal documentation at large organizations is often fragmented across multiple platforms, making it
-                nearly impossible for employees to find specific answers quickly.</p>
+            <p class="intro">
+                I designed and deployed a production-ready RAG system that enables accurate,
+                low-latency querying of private PDF documents by grounding LLM responses
+                in verified document context.
+            </p>
 
-            <h2>The Solution</h2>
-            <p>I developed DocQuery, a retrieval-augmented generation (RAG) system that indexes internal docs into a
-                vector database. Using advanced reranking and semantic search, it provides instant, cited answers to
-                complex queries.</p>
+            <p class="meta">
+                ▶ <a href="#" target="_blank">Live Demo: Hugging Face Space</a><br>
+                📄 <strong>Tech Stack:</strong> Python · LangChain (LCEL) · Pinecone · Groq API ·
+                Llama 3 · MiniLM Embeddings · Gradio
+            </p>
         </div>
 
         <aside class="detail-sidebar reveal delay-1">
@@ -75,6 +78,174 @@
             </div>
         </aside>
     </main>
+
+    <div class="project-body-full">
+        <!-- PROBLEM -->
+        <section class="reveal">
+            <h2>The Problem</h2>
+
+            <p>
+                Organizations store critical knowledge in unstructured documents such as PDFs,
+                manuals, and reports. Retrieving precise answers from these documents is slow
+                and inefficient, while naïve LLM usage often leads to hallucinations or
+                irrelevant responses.
+            </p>
+
+            <p>
+                Traditional keyword search fails to capture semantic meaning, and generic
+                chatbots lack grounding in source data.
+            </p>
+
+            <p>
+                <strong>The challenge:</strong> build a system that delivers fast, accurate,
+                and context-aware answers — grounded strictly in the uploaded documents.
+            </p>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="reveal">
+            <h2>The Solution</h2>
+
+            <p>
+                DocQuery is a Retrieval-Augmented Generation (RAG) assistant that combines
+                semantic search with LLM reasoning to answer questions directly from private
+                documents.
+            </p>
+
+            <p>
+                The system retrieves the most relevant document chunks using vector similarity
+                search and injects them into a structured prompt pipeline, ensuring responses
+                are both accurate and explainable.
+            </p>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="reveal">
+            <h2>System Architecture</h2>
+
+            <ul>
+                <li>Users upload one or more PDF documents</li>
+                <li>Documents are parsed, chunked, and embedded using MiniLM</li>
+                <li>Embeddings are stored in a Pinecone vector database</li>
+                <li>User queries are embedded and matched via top-K similarity search</li>
+                <li>Retrieved context is injected into an LCEL-style prompt</li>
+                <li>Llama 3 (served via Groq API) generates grounded responses</li>
+                <li>Results are delivered through a clean chat interface</li>
+            </ul>
+
+            <p>
+                This architecture cleanly separates retrieval, prompt orchestration, and
+                generation, making the system extensible and production-ready.
+            </p>
+        </section>
+
+        <!-- ENGINEERING DECISIONS -->
+        <section class="reveal">
+            <h2>Key Engineering Decisions</h2>
+
+            <h3>Vector Database: Pinecone</h3>
+            <p>
+                Chosen for managed scalability, low-latency similarity search, and reliability
+                in production semantic retrieval workloads.
+            </p>
+
+            <h3>Embeddings: all-MiniLM-L6-v2</h3>
+            <p>
+                Selected to balance embedding quality, speed, and cost — ideal for real-time
+                document querying.
+            </p>
+
+            <h3>LLM Inference: Llama 3 via Groq</h3>
+            <p>
+                Groq’s ultra-fast inference significantly reduces latency, enabling smooth,
+                interactive user experiences rather than batch-style responses.
+            </p>
+
+            <h3>Prompt Orchestration: LCEL-Style Chaining</h3>
+            <p>
+                Structured message composition ensures clear separation between system
+                instructions, retrieved context, and user input — reducing hallucinations
+                and improving consistency.
+            </p>
+        </section>
+
+        <!-- CAPABILITIES -->
+        <section class="reveal">
+            <h2>Core Capabilities</h2>
+
+            <ul>
+                <li>Semantic retrieval across multiple PDF documents</li>
+                <li>Top-K chunk selection for highly relevant context</li>
+                <li>Persistent conversational memory across sessions</li>
+                <li>Retry mechanism to explore alternative grounded responses</li>
+                <li>Clean, professional chat interface optimized for real usage</li>
+            </ul>
+        </section>
+
+        <!-- OUTCOME -->
+        <section class="reveal">
+            <h2>Outcome & Impact</h2>
+
+            <ul>
+                <li>Delivered a complete end-to-end RAG pipeline from ingestion to inference</li>
+                <li>Achieved fast response times suitable for interactive knowledge access</li>
+                <li>
+                    Built a reusable architecture applicable to internal knowledge bases,
+                    research assistants, and support tools
+                </li>
+            </ul>
+
+            <p>
+                This project demonstrates applied AI engineering beyond experimentation —
+                with real deployment constraints in mind.
+            </p>
+        </section>
+
+        <!-- DEMO -->
+        <section class="reveal">
+            <h2>Live Demo</h2>
+
+            <p>
+                ▶ <a href="#" target="_blank">Try the system live on Hugging Face</a><br>
+                An interactive demo running in a production-style environment.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="reveal">
+            <h2>Skills Demonstrated</h2>
+
+            <ul>
+                <li>Retrieval-Augmented Generation (RAG)</li>
+                <li>Vector Databases & Semantic Search</li>
+                <li>LLM Prompt Orchestration (LCEL)</li>
+                <li>Cloud-Based AI Deployment</li>
+                <li>System Design & Trade-Off Analysis</li>
+            </ul>
+        </section>
+
+        <!-- IMPROVEMENTS -->
+        <section class="reveal">
+            <h2>Planned Improvements</h2>
+
+            <ul>
+                <li>Document-level metadata filtering</li>
+                <li>Hybrid semantic + keyword retrieval</li>
+                <li>Retrieval quality evaluation metrics</li>
+                <li>User authentication and document isolation</li>
+            </ul>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing reveal">
+            <h2>Why This Project Matters</h2>
+
+            <p>
+                This project reflects how I approach AI engineering:
+                <strong>not just building demos, but designing systems that can realistically ship.</strong>
+            </p>
+        </section>
+    </div>
 
     <footer>
         <p>© 2026 Ben Onwurah</p>

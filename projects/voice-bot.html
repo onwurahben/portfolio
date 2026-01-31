@@ -26,8 +26,8 @@
     </a>
 
     <header class="project-hero reveal">
-        <span class="section-id">VOICE_SYSTEM / 02</span>
-        <h1>Voice AI Assistant</h1>
+        <span class="section-id">MULTIMODAL_AI / 02</span>
+        <h1>AI Voice Assistant</h1>
 
         <div class="project-meta-grid">
             <div class="meta-item">
@@ -40,12 +40,12 @@
             </div>
             <div class="meta-item">
                 <h5>Stack</h5>
-                <p>Whisper, Deepgram, ElevenLabs</p>
+                <p>Whisper, LLaMA 3, Groq</p>
             </div>
         </div>
     </header>
 
-    <section class="project-showcase reveal">
+    <section class="project-showcase">
         <video autoplay loop muted playsinline shadow>
             <source src="../images/voice-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -54,27 +54,233 @@
 
     <main class="project-content-grid">
         <div class="main-content reveal">
-            <h2>The Challenge</h2>
-            <p>Traditional voice assistants suffer from high latency and robotic delivery, making natural conversation
-                difficult for users.</p>
+            <p class="intro">
+                I designed and deployed a production-ready voice AI assistant that enables natural, real-time
+                conversations
+                by orchestrating speech detection, transcription, reasoning, and speech synthesis in a single
+                low-latency pipeline.
+            </p>
 
-            <h2>The Solution</h2>
-            <p>I built a real-time speech-to-speech assistant that optimizes every layer of the stack—from high-speed
-                transcription to low-latency LLM inference and expressive synthesis.</p>
+            <p class="meta">
+                ▶ <a href="#" target="_blank">Live Demo: Hugging Face Space</a><br>
+                🎙️ <strong>Tech Stack:</strong> Python · Flask · LLaMA 3 (70B) · Whisper · Groq API · ElevenLabs ·
+                Google TTS · Docker
+            </p>
         </div>
 
         <aside class="detail-sidebar reveal delay-1">
             <div class="sidebar-item">
-                <h6>Performance</h6>
-                <p>
-                    < 800ms end-to-end latency</p>
+                <h6>Optimization</h6>
+                <p>Client-side Voice Activity Detection (VAD)</p>
             </div>
             <div class="sidebar-item">
-                <h6>Core Tech</h6>
-                <p>Custom streaming pipeline using WebSockets for real-time duplex communication.</p>
+                <h6>Performance</h6>
+                <p>Ultra-Fast Inference with Groq</p>
             </div>
         </aside>
     </main>
+
+    <div class="project-body-full">
+        <!-- PROBLEM -->
+        <section class="reveal">
+            <h2>The Problem</h2>
+            <p>
+                Most voice assistants fail in real-world usage due to latency, poor speech detection, robotic audio
+                output,
+                or high operational costs. Systems often record silence, misinterpret background noise, or generate
+                responses
+                that sound unnatural when spoken aloud.
+            </p>
+            <p>
+                For conversational AI to feel usable, it must:
+            </p>
+            <ul>
+                <li>Detect when a user is actually speaking</li>
+                <li>Respond quickly enough to feel interactive</li>
+                <li>Produce audio that sounds natural, not synthetic</li>
+                <li>Maintain conversational context across turns</li>
+            </ul>
+            <p>
+                <strong>The challenge:</strong> build a voice-first AI system that feels responsive, human, and
+                production-ready — not experimental.
+            </p>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="reveal">
+            <h2>The Solution</h2>
+            <p>
+                This project is a multimodal AI voice assistant that combines real-time speech detection, transcription,
+                LLM reasoning, and high-quality text-to-speech into a single cohesive system.
+            </p>
+            <p>
+                The assistant listens intelligently, reasons accurately, and responds with natural-sounding speech —
+                while minimizing unnecessary API calls and latency.
+            </p>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="reveal">
+            <h2>System Architecture</h2>
+            <p>
+                The system is designed as a low-latency, modular pipeline:
+            </p>
+            <ul>
+                <li>Client-side Voice Activity Detection (VAD) analyzes audio energy in real time</li>
+                <li>Only validated speech is sent for transcription</li>
+                <li>Whisper (via Groq) converts speech to text</li>
+                <li>LLaMA 3 (70B) generates a contextual response</li>
+                <li>Output text is cleaned and optimized for speech</li>
+                <li>A TTS router selects the best available voice provider</li>
+                <li>Audio is streamed back to the user</li>
+                <li>Session-based memory maintains conversational context</li>
+            </ul>
+            <p>
+                This architecture ensures both responsiveness and cost efficiency.
+            </p>
+        </section>
+
+        <!-- ENGINEERING DECISIONS -->
+        <section class="reveal">
+            <h2>Key Engineering Decisions</h2>
+
+            <h3>Client-Side Voice Activity Detection (VAD)</h3>
+            <p>
+                Rather than relying on server-side filtering, the system performs RMS-based speech detection on the
+                client.
+                This prevents silent or noisy audio from being sent to the backend, reducing costs and improving
+                responsiveness
+                across all languages.
+            </p>
+
+            <h3>Ultra-Fast Inference with Groq</h3>
+            <p>
+                Both Whisper (STT) and LLaMA 3 (LLM) are served via Groq to minimize end-to-end latency, enabling near
+                real-time
+                conversational flow.
+            </p>
+
+            <h3>Multi-Provider TTS Architecture</h3>
+            <p>
+                The system supports multiple TTS providers with automatic routing:
+            </p>
+            <ul>
+                <li>ElevenLabs for premium, human-like voices</li>
+                <li>Google Cloud TTS as a reliable fallback</li>
+            </ul>
+            <p>
+                This design avoids single-provider lock-in and improves system resilience.
+            </p>
+
+            <h3>Session-Based Memory Management</h3>
+            <p>
+                Each user session maintains its own conversational state, enabling coherent multi-turn conversations
+                while
+                remaining Docker-compatible and safe for concurrent users.
+            </p>
+        </section>
+
+        <!-- CAPABILITIES -->
+        <section class="reveal">
+            <h2>Core Capabilities</h2>
+            <ul>
+                <li>Real-time voice interaction with intelligent speech detection</li>
+                <li>Multilingual speech-to-text and text-to-speech support</li>
+                <li>Natural-sounding audio output with multiple voice profiles</li>
+                <li>Persistent conversational memory across turns</li>
+                <li>Cost-optimized audio processing pipeline</li>
+                <li>Fully containerized deployment for cloud or local environments</li>
+            </ul>
+        </section>
+
+        <!-- PRODUCTION IMPLEMENTATION -->
+        <section class="reveal">
+            <h2>Production-Grade Implementation</h2>
+            <ul>
+                <li><strong>Backend:</strong> Flask-based orchestration layer</li>
+                <li><strong>STT:</strong> Groq-hosted Whisper Large v3</li>
+                <li><strong>LLM:</strong> LLaMA 3 (70B) via Groq</li>
+                <li><strong>TTS:</strong> ElevenLabs + Google Cloud Text-to-Speech</li>
+                <li><strong>Frontend:</strong> Lightweight web UI with client-side audio processing</li>
+                <li><strong>Deployment:</strong> Docker & Docker Compose</li>
+            </ul>
+            <p>
+                The system was engineered with stability, latency, and extensibility in mind.
+            </p>
+        </section>
+
+        <!-- PERFORMANCE -->
+        <section class="reveal">
+            <h2>Performance Characteristics</h2>
+            <ul>
+                <li><strong>Speech-to-Text:</strong> ~2–3 seconds</li>
+                <li><strong>LLM Reasoning:</strong> ~1–2 seconds</li>
+                <li><strong>Text-to-Speech:</strong> ~1–2 seconds (ElevenLabs)</li>
+                <li><strong>End-to-End Interaction:</strong> ~5–8 seconds per conversational turn</li>
+            </ul>
+            <p>
+                These timings enable smooth, natural-feeling dialogue.
+            </p>
+        </section>
+
+        <!-- OUTCOME -->
+        <section class="reveal">
+            <h2>Outcome & Impact</h2>
+            <ul>
+                <li>Built a fully integrated multimodal AI assistant from microphone input to spoken response</li>
+                <li>Reduced unnecessary API usage through intelligent audio preprocessing</li>
+                <li>Demonstrated production-level handling of latency, cost, and user experience</li>
+            </ul>
+            <p>
+                This project showcases applied AI engineering beyond text — integrating audio, language, and system
+                design.
+            </p>
+        </section>
+
+        <!-- DEMO -->
+        <section class="reveal">
+            <h2>Live Demo</h2>
+            <p>
+                ▶ <a href="#" target="_blank">Try the AI Voice Assistant live on Hugging Face</a><br>
+                Interact with the system in real time and experience the full voice pipeline in action.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="reveal">
+            <h2>Skills Demonstrated</h2>
+            <ul>
+                <li>Multimodal AI System Design</li>
+                <li>Speech-to-Text & Text-to-Speech Pipelines</li>
+                <li>Low-Latency LLM Orchestration</li>
+                <li>Client-Side Signal Processing</li>
+                <li>Dockerized AI Deployment</li>
+                <li>Conversational UX Engineering</li>
+            </ul>
+        </section>
+
+        <!-- IMPROVEMENTS -->
+        <section class="reveal">
+            <h2>Planned Improvements</h2>
+            <ul>
+                <li>Streaming partial responses for faster perceived latency</li>
+                <li>Advanced turn-taking and interruption handling</li>
+                <li>User authentication and voice personalization</li>
+                <li>Expanded multilingual optimization</li>
+            </ul>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing reveal">
+            <h2>Why This Project Matters</h2>
+            <p>
+                This project reflects my approach to AI engineering:
+                <strong>building systems that feel natural to use, scale responsibly, and perform reliably under
+                    real constraints — not just impressive demos.</strong>
+            </p>
+        </section>
+
+    </div>
 
     <footer>
         <p>© 2026 Ben Onwurah</p>

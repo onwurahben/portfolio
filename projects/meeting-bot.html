@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting Analysis Bot — Ben Onwurah</title>
+    <title>AI Meeting Assistant — Ben Onwurah</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,26 +26,26 @@
     </a>
 
     <header class="project-hero reveal">
-        <span class="section-id">AUTOMATION_SYS / 04</span>
-        <h1>Meeting Analysis Bot</h1>
+        <span class="section-id">SPEECH_INTELLIGENCE / 04</span>
+        <h1>AI Meeting Assistant</h1>
 
         <div class="project-meta-grid">
             <div class="meta-item">
                 <h5>Role</h5>
-                <p>Cloud AI Engineer</p>
+                <p>AI Systems Engineer</p>
             </div>
             <div class="meta-item">
                 <h5>Focus</h5>
-                <p>Enterprise Automation</p>
+                <p>Speech Intelligence</p>
             </div>
             <div class="meta-item">
                 <h5>Stack</h5>
-                <p>AWS Lambda, GPT-4, S3</p>
+                <p>LLaMA 3, Deepgram, Gradio</p>
             </div>
         </div>
     </header>
 
-    <section class="project-showcase reveal">
+    <section class="project-showcase">
         <video autoplay loop muted playsinline>
             <source src="../images/meeting-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -54,26 +54,209 @@
 
     <main class="project-content-grid">
         <div class="main-content reveal">
-            <h2>The Challenge</h2>
-            <p>Following up on long meetings is a major productivity drain. Summary emails often miss critical action
-                items and speaker context.</p>
+            <p class="intro">
+                I designed and deployed an end-to-end AI system that transforms raw meeting audio into
+                structured, speaker-aware transcripts, summaries, and shareable reports suitable for
+                internal business workflows.
+            </p>
 
-            <h2>The Solution</h2>
-            <p>This production-grade analysis bot processes meeting transcripts to identify speaker sentiment, key
-                decisions, and automated task assignments for enterprise teams.</p>
+            <p class="meta">
+                ▶ <a href="#" target="_blank">Live Demo: Hugging Face Space</a><br>
+                🎙️ <strong>Tech Stack:</strong> Python · Gradio · Deepgram Nova-2 · Whisper · LLaMA 3 · Groq API · PDF
+                Generation · Email Automation
+            </p>
         </div>
 
         <aside class="detail-sidebar reveal delay-1">
             <div class="sidebar-item">
-                <h6>Scalability</h6>
-                <p>Serverless architecture handling 1000+ hours monthly</p>
+                <h6>Core Feature</h6>
+                <p>Speaker-Aware Diarization</p>
             </div>
             <div class="sidebar-item">
-                <h6>Special Feature</h6>
-                <p>Automated Jira integration for action item tracking.</p>
+                <h6>Output</h6>
+                <p>Automated PDF Reports</p>
             </div>
         </aside>
     </main>
+
+    <div class="project-body-full">
+        <!-- PROBLEM -->
+        <section class="reveal">
+            <h2>The Problem</h2>
+            <p>
+                Meetings generate valuable information, but most of it is lost. Audio recordings are difficult
+                to search, time-consuming to review, and rarely transformed into actionable documentation.
+            </p>
+            <p>
+                Manual transcription and note-taking are slow and error-prone, while generic transcription tools fail
+                to:
+            </p>
+            <ul>
+                <li>Identify who said what</li>
+                <li>Produce readable, structured summaries</li>
+                <li>Generate outputs that teams can actually share and reuse</li>
+            </ul>
+            <p>
+                <strong>The challenge:</strong> build a system that converts raw meeting audio into clear,
+                structured, and distributable intelligence — not just text.
+            </p>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="reveal">
+            <h2>The Solution</h2>
+            <p>
+                This project is a meeting intelligence assistant that processes recorded meeting audio and produces:
+            </p>
+            <ul>
+                <li>Speaker-aware transcripts with timestamps</li>
+                <li>High-level meeting summaries</li>
+                <li>Polished PDF reports</li>
+                <li>Optional email delivery for async collaboration</li>
+            </ul>
+            <p>
+                The system mirrors how internal AI tools are built inside real organizations — modular,
+                extensible, and focused on usability.
+            </p>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="reveal">
+            <h2>System Architecture</h2>
+            <p>
+                The application follows a multi-stage speech intelligence pipeline:
+            </p>
+            <ul>
+                <li>Users upload recorded meeting audio (MP3/WAV)</li>
+                <li>Speech-to-text is performed using Deepgram or Whisper</li>
+                <li>Speaker diarization identifies and segments individual speakers</li>
+                <li>Transcript segments are aligned, cleaned, and normalized</li>
+                <li>LLM-based post-processing generates structured summaries</li>
+                <li>Outputs are packaged into readable transcripts and PDF reports</li>
+                <li>Results can be delivered via email for easy sharing</li>
+            </ul>
+            <p>
+                Each stage is intentionally decoupled to allow future upgrades or replacements.
+            </p>
+        </section>
+
+        <!-- ENGINEERING DECISIONS -->
+        <section class="reveal">
+            <h2>Key Engineering Decisions</h2>
+
+            <h3>Speaker-Aware Transcription</h3>
+            <p>
+                Rather than producing raw transcripts, the system performs speaker diarization with timestamp alignment,
+                making transcripts readable, attributable, and suitable for business use.
+            </p>
+
+            <h3>Modular Speech Stack</h3>
+            <p>
+                The system supports both cloud-based (Deepgram) and local (Whisper / Pyannote) components, allowing
+                trade-offs between accuracy, cost, and compute availability.
+            </p>
+
+            <h3>LLM-Based Post-Processing</h3>
+            <p>
+                LLaMA 3 (served via Groq) is used after transcription to generate concise, structured meeting summaries
+                rather than verbose paraphrases.
+            </p>
+
+            <h3>Report-Ready Outputs</h3>
+            <p>
+                Transcripts are converted into polished PDF reports, making them immediately usable for documentation,
+                client follow-ups, or internal archives.
+            </p>
+        </section>
+
+        <!-- CAPABILITIES -->
+        <section class="reveal">
+            <h2>Core Capabilities</h2>
+            <ul>
+                <li>High-accuracy speech-to-text transcription</li>
+                <li>Speaker diarization with timestamped segments</li>
+                <li>Clean, readable meeting transcripts</li>
+                <li>Automated meeting summaries</li>
+                <li>PDF report generation</li>
+                <li>Optional email delivery for async teams</li>
+                <li>Web-based interface for easy access</li>
+            </ul>
+        </section>
+
+        <!-- PRODUCTION IMPLEMENTATION -->
+        <section class="reveal">
+            <h2>Production-Oriented Implementation</h2>
+            <ul>
+                <li><strong>UI:</strong> Gradio 6.x for rapid, reliable interfaces</li>
+                <li><strong>Speech-to-Text:</strong> Deepgram Nova-2 or Whisper</li>
+                <li><strong>Diarization:</strong> Deepgram or Pyannote</li>
+                <li><strong>LLM:</strong> LLaMA 3 via Groq API</li>
+                <li><strong>Audio Processing:</strong> pydub, ffmpy</li>
+                <li><strong>Reporting:</strong> fpdf2</li>
+                <li><strong>Deployment:</strong> Hugging Face Spaces (CPU-optimized)</li>
+            </ul>
+            <p>
+                The system is designed to run efficiently in CPU-only environments, making it cost-effective to deploy.
+            </p>
+        </section>
+
+        <!-- OUTCOME -->
+        <section class="reveal">
+            <h2>Outcome & Impact</h2>
+            <ul>
+                <li>Built a complete speech-intelligence pipeline from audio upload to shareable report</li>
+                <li>Demonstrated real-world AI automation beyond chat interfaces</li>
+                <li>Created a system adaptable to internal teams, founders, and client-facing workflows</li>
+            </ul>
+            <p>
+                This project highlights applied AI engineering for knowledge capture and operational efficiency.
+            </p>
+        </section>
+
+        <!-- DEMO -->
+        <section class="reveal">
+            <h2>Live Demo</h2>
+            <p>
+                ▶ <a href="#" target="_blank">Try the AI Meeting Assistant on Hugging Face</a><br>
+                Upload a meeting recording and receive a full transcript, summary, and PDF report.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="reveal">
+            <h2>Skills Demonstrated</h2>
+            <ul>
+                <li>Speech Intelligence Pipelines</li>
+                <li>Speaker Diarization & Audio Processing</li>
+                <li>LLM-Based Post-Processing</li>
+                <li>AI-Driven Document Generation</li>
+                <li>End-to-End System Design</li>
+                <li>Production-Style AI Deployment</li>
+            </ul>
+        </section>
+
+        <!-- IMPROVEMENTS -->
+        <section class="reveal">
+            <h2>Planned Improvements</h2>
+            <ul>
+                <li>Speaker name labeling and customization</li>
+                <li>Calendar and meeting-platform integrations</li>
+                <li>Streaming transcription for live meetings</li>
+                <li>Analytics on meeting duration and participation</li>
+            </ul>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing reveal">
+            <h2>Why This Project Matters</h2>
+            <p>
+                This project reflects how I build AI systems:
+                <strong>focused on capturing real information, structuring it intelligently, and delivering outputs
+                    people actually use.</strong>
+            </p>
+        </section>
+
+    </div>
 
     <footer>
         <p>© 2026 Ben Onwurah</p>

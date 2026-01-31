@@ -22,7 +22,7 @@
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
-        Back to homepage
+        Back to archive
     </a>
 
     <header class="project-hero reveal">
@@ -36,16 +36,16 @@
             </div>
             <div class="meta-item">
                 <h5>Focus</h5>
-                <p>Generative Pipelines</p>
+                <p>Generative Pipelines & HITL</p>
             </div>
             <div class="meta-item">
                 <h5>Stack</h5>
-                <p>Claude 3, Next.js, PostgreSQL</p>
+                <p>Python, OpenAI, Supabase</p>
             </div>
         </div>
     </header>
 
-    <section class="project-showcase reveal">
+    <section class="project-showcase">
         <video autoplay loop muted playsinline>
             <source src="../images/redraft-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -54,26 +54,208 @@
 
     <main class="project-content-grid">
         <div class="main-content reveal">
-            <h2>The Challenge</h2>
-            <p>Creating high-quality social content at scale often leads to a drop in brand voice consistency and
-                engagement.</p>
+            <p class="intro">
+                I designed and deployed a production-grade, self-correcting AI content system that generates,
+                evaluates, and refines LinkedIn posts using multi-LLM orchestration and human-in-the-loop workflows.
+            </p>
 
-            <h2>The Solution</h2>
-            <p>Redraft is an end-to-end content system that uses LLMs to generate, evaluate, and approve LinkedIn
-                content based on specific persona guidelines and engagement metrics.</p>
+            <p class="meta">
+                ▶ <a href="#" target="_blank">Live Demo: Hugging Face Space</a><br>
+                ✍️ <strong>Tech Stack:</strong> Python · Flask · GPT-4 · Gemini 2.0 Flash · Supabase · Docker · Hugging
+                Face · Telegram API
+            </p>
         </div>
 
         <aside class="detail-sidebar reveal delay-1">
             <div class="sidebar-item">
-                <h6>Efficiency</h6>
-                <p>90% faster content drafting</p>
+                <h6>Core Metric</h6>
+                <p>Eliminated "AI-written" tone via recursive evaluation</p>
             </div>
             <div class="sidebar-item">
-                <h6>Compliance</h6>
-                <p>Built-in AI "Judge" model to ensure every post adheres to brand safety and style rules.</p>
+                <h6>Architecture</h6>
+                <p>Event-driven pipeline with human-in-the-loop approval.</p>
             </div>
         </aside>
     </main>
+
+    <div class="project-body-full">
+        <!-- PROBLEM -->
+        <section class="reveal">
+            <h2>The Problem</h2>
+            <p>
+                Most AI content tools rely on one-shot generation. The result is predictable: robotic tone,
+                generic advice, and posts that scream “AI-written.”
+            </p>
+            <p>
+                For individuals and companies that rely on LinkedIn for visibility, authority, and lead generation,
+                this is a serious problem. Content must feel human, intentional, and aligned with brand standards —
+                not just syntactically correct.
+            </p>
+            <p>
+                <strong>The challenge:</strong> build an AI system that doesn’t just generate content, but
+                evaluates and improves it automatically, while keeping humans in control.
+            </p>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="reveal">
+            <h2>The Solution</h2>
+            <p>
+                Redraft is a self-correcting AI content engine designed to operate like an editorial system
+                rather than a text generator.
+            </p>
+            <p>
+                It combines:
+            </p>
+            <ul>
+                <li>One LLM optimized for creative generation</li>
+                <li>A second LLM optimized for objective evaluation</li>
+                <li>A recursive rewrite loop</li>
+                <li>Human approval at critical decision points</li>
+            </ul>
+            <p>
+                The result is an AI pipeline that continuously refines output until it meets predefined quality
+                thresholds or is escalated for review.
+            </p>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="reveal">
+            <h2>System Architecture</h2>
+            <p>
+                Redraft follows a decoupled, event-driven architecture designed for automation at scale.
+            </p>
+            <p><strong>High-level flow:</strong></p>
+            <ul>
+                <li>Content topics are provided manually or generated automatically</li>
+                <li>GPT-4 generates an initial LinkedIn post draft</li>
+                <li>Gemini 2.0 Flash evaluates the draft against quality criteria</li>
+                <li>If the draft fails, structured feedback is returned</li>
+                <li>The system triggers an automated rewrite loop</li>
+                <li>Approved drafts are persisted to a database</li>
+                <li>Humans review and approve via web dashboard or Telegram</li>
+                <li>Final content is prepared for publishing workflows</li>
+            </ul>
+            <p>
+                This design cleanly separates generation, evaluation, storage, and human oversight.
+            </p>
+        </section>
+
+        <!-- ENGINEERING DECISIONS -->
+        <section class="reveal">
+            <h2>Key Engineering Decisions</h2>
+
+            <h3>Multi-LLM Orchestration</h3>
+            <p>
+                GPT-4 is used for creative reasoning and tone, while Gemini 2.0 Flash acts as an objective evaluator.
+                This separation mirrors real editorial workflows and avoids the weaknesses of single-model systems.
+            </p>
+
+            <h3>Recursive Evaluation Loop</h3>
+            <p>
+                Instead of regenerating blindly, the system feeds structured evaluator feedback back into the generator,
+                improving quality iteratively and reducing prompt heaviness.
+            </p>
+
+            <h3>Human-in-the-Loop (HITL) Design</h3>
+            <p>
+                AI handles scale and iteration; humans retain final authority. Approval and rejection actions directly
+                influence the rewrite pipeline.
+            </p>
+
+            <h3>Persistent State & Observability</h3>
+            <p>
+                All drafts, feedback, and actions are logged in Supabase (PostgreSQL), enabling traceability, analytics,
+                and future optimization.
+            </p>
+        </section>
+
+        <!-- CAPABILITIES -->
+        <section class="reveal">
+            <h2>Core Capabilities</h2>
+            <ul>
+                <li>Self-correcting AI content generation with evaluation loops</li>
+                <li>Brand-aware rewriting to eliminate AI buzzwords and robotic tone</li>
+                <li>Web dashboard for review, statistics, and system control</li>
+                <li>Telegram bot for real-time approval or rejection</li>
+                <li>Automated daily content generation via scheduled workflows</li>
+                <li>Database-backed “kill switch” to pause automation instantly</li>
+            </ul>
+        </section>
+
+        <!-- PRODUCTION IMPLEMENTATION -->
+        <section class="reveal">
+            <h2>Production-Grade Implementation</h2>
+            <ul>
+                <li><strong>Backend:</strong> Flask-based API with modular workers</li>
+                <li><strong>Persistence:</strong> Supabase (managed PostgreSQL)</li>
+                <li><strong>Deployment:</strong> Fully Dockerized with Gunicorn</li>
+                <li><strong>Automation:</strong> GitHub Actions for scheduled execution</li>
+                <li><strong>Reliability:</strong> Safe execution wrappers with retry logic and exponential backoff</li>
+                <li><strong>UI:</strong> Lightweight vanilla JS dashboard optimized for speed and clarity</li>
+            </ul>
+            <p>
+                This system was designed with real operational constraints in mind — not just demos.
+            </p>
+        </section>
+
+        <!-- OUTCOME -->
+        <section class="reveal">
+            <h2>Outcome & Impact</h2>
+            <ul>
+                <li>Built an end-to-end AI content pipeline that mirrors professional editorial workflows</li>
+                <li>Reduced manual content iteration by automating evaluation and rewriting</li>
+                <li>Created a reusable system adaptable to personal brands, agencies, or SaaS teams</li>
+            </ul>
+            <p>
+                Redraft demonstrates how AI systems can move beyond novelty and into revenue-supporting infrastructure.
+            </p>
+        </section>
+
+        <!-- DEMO -->
+        <section class="reveal">
+            <h2>Live Demo</h2>
+            <p>
+                ▶ <a href="#" target="_blank">View the live Redraft system on Hugging Face</a><br>
+                Includes dashboard, evaluation loop, and approval workflow running in a production-style environment.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="reveal">
+            <h2>Skills Demonstrated</h2>
+            <ul>
+                <li>Multi-LLM System Design</li>
+                <li>Prompt Chaining & AI Evaluation Loops</li>
+                <li>Human-in-the-Loop Architectures</li>
+                <li>AI Automation & Scheduling</li>
+                <li>Production Deployment with Docker</li>
+                <li>Business-Aligned AI System Design</li>
+            </ul>
+        </section>
+
+        <!-- IMPROVEMENTS -->
+        <section class="reveal">
+            <h2>Planned Improvements</h2>
+            <ul>
+                <li>User authentication and role-based access</li>
+                <li>Post performance feedback loop (engagement-aware rewriting)</li>
+                <li>Multi-platform expansion beyond LinkedIn</li>
+                <li>Scoring visibility for evaluator outputs</li>
+            </ul>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing reveal">
+            <h2>Why This Project Matters</h2>
+            <p>
+                Redraft shows how I approach AI engineering:
+                <strong>designing systems that generate value, enforce quality, and scale responsibly — not just
+                    text.</strong>
+            </p>
+        </section>
+
+    </div>
 
     <footer>
         <p>© 2026 Ben Onwurah</p>

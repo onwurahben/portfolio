@@ -11,6 +11,6 @@
   <circle cx="400" cy="700" r="180" fill="#f0a6ca" opacity="0.15" filter="url(#blur1)" />
   
   <!-- Thin Abstract Lines -->
-  <path d="M 100,200 Q 300,100 500,400 T 900,300" stroke="#1a1a1a" stroke-width="1" fill="none" opacity="0.2" />
-  <path d="M 0,600 Q 200,800 600,500 T 1000,700" stroke="#1a1a1a" stroke-width="1" fill="none" opacity="0.15" />
+  <path d="M 100,200 Q 300,100 500,400 T 900,300" stroke="#1a1a1a" stroke-width="1.5" fill="none" opacity="0.2" />
+  <path d="M 0,600 Q 200,800 600,500 T 1000,700" stroke="#1a1a1a" stroke-width="1.5" fill="none" opacity="0.15" />
 </svg>

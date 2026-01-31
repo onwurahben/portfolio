@@ -28,7 +28,10 @@
           AI automation, LLM apps, and internal tools for startups and teams
           that want leverage — not hype.
         </p>
-        <a href="#projects" class="btn-primary reveal delay-3">View selected work</a>
+        <div class="hero-actions reveal delay-3">
+          <a href="#projects" class="btn-primary">View selected work</a>
+          <a href="#services" class="btn-secondary">View services</a>
+        </div>
       </div>
 
       <div class="profile-card reveal delay-2">
@@ -58,7 +61,7 @@
   </div>
 
   <!-- CAPABILITIES / SERVICES -->
-  <section class="capabilities reveal">
+  <section id="services" class="capabilities reveal">
     <span class="section-id">CAPABILITY_SYNC_01</span>
     <h2>Expertise</h2>
     <div class="capability-grid">
@@ -94,7 +97,7 @@
 
       <a class="project-card reveal" href="projects/docquery.html">
         <div class="project-image">
-          <img src="images/docquery.png" alt="DocQuery interface screenshot">
+          <img src="images/docquery-v2.png" alt="DocQuery interface screenshot">
         </div>
         <span class="meta-tag">RAG_01</span>
         <span>Python · RAG · LLMs</span>
@@ -145,33 +148,40 @@
   <section class="stack-section reveal">
     <span class="section-id">INFRASTRUCTURE_04</span>
     <h2>Technical Stack</h2>
-    <div class="stack-tier">
-      <h4>Models & Frameworks</h4>
-      <div class="stack-tags">
-        <span class="meta-tag">GPT-4</span>
-        <span class="meta-tag">Claude 3</span>
-        <span class="meta-tag">PyTorch</span>
-        <span class="meta-tag">HuggingFace</span>
-        <span class="meta-tag">LangChain</span>
+    <div class="stack-container">
+      <div class="stack-content">
+        <div class="stack-tier">
+          <h4>Models & Frameworks</h4>
+          <div class="stack-tags">
+            <span class="meta-tag">GPT-4</span>
+            <span class="meta-tag">Claude 3</span>
+            <span class="meta-tag">PyTorch</span>
+            <span class="meta-tag">HuggingFace</span>
+            <span class="meta-tag">LangChain</span>
+          </div>
+        </div>
+        <div class="stack-tier">
+          <h4>Data & Search</h4>
+          <div class="stack-tags">
+            <span class="meta-tag">Pinecone</span>
+            <span class="meta-tag">Weaviate</span>
+            <span class="meta-tag">PostgreSQL</span>
+            <span class="meta-tag">Elasticsearch</span>
+          </div>
+        </div>
+        <div class="stack-tier">
+          <h4>Engineering</h4>
+          <div class="stack-tags">
+            <span class="meta-tag">Python</span>
+            <span class="meta-tag">Docker</span>
+            <span class="meta-tag">AWS</span>
+            <span class="meta-tag">TypeScript</span>
+            <span class="meta-tag">React</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="stack-tier">
-      <h4>Data & Search</h4>
-      <div class="stack-tags">
-        <span class="meta-tag">Pinecone</span>
-        <span class="meta-tag">Weaviate</span>
-        <span class="meta-tag">PostgreSQL</span>
-        <span class="meta-tag">Elasticsearch</span>
-      </div>
-    </div>
-    <div class="stack-tier">
-      <h4>Engineering</h4>
-      <div class="stack-tags">
-        <span class="meta-tag">Python</span>
-        <span class="meta-tag">Docker</span>
-        <span class="meta-tag">AWS</span>
-        <span class="meta-tag">TypeScript</span>
-        <span class="meta-tag">React</span>
+      <div class="stack-visual">
+        <img src="images/tech-stack-shapes.svg" alt="Technical Stack Viz" class="stack-graphic">
       </div>
     </div>
   </section>
@@ -183,14 +193,34 @@
   </div>
 
   <!-- HOW I BUILD -->
+  <!-- HOW I BUILD -->
   <section class="philosophy reveal">
     <span class="section-id">PRINCIPLE_CORE_03</span>
     <h2>How I build</h2>
 
+    <p class="philosophy-intro reveal delay-1">
+      The goal is to deliver AI systems that businesses can deploy with confidence,
+      operate day-to-day, and scale without unexpected failures or runaway costs.
+    </p>
+
     <ul>
-      <li class="reveal delay-1">I design AI systems that survive real users, not just demos.</li>
-      <li class="reveal delay-2">I prefer simple architectures with clear failure modes.</li>
-      <li class="reveal delay-3">I optimize for cost, reliability, and maintainability.</li>
+      <li class="reveal delay-2">
+        <strong>Systems that work in production.</strong>
+        Solutions are designed to handle real user behavior, imperfect data,
+        and operational edge cases — reducing the risk of breakdowns after launch.
+      </li>
+
+      <li class="reveal delay-2">
+        <strong>Architectures your team can own.</strong>
+        Clear, well-structured systems make it easier for internal teams to
+        understand, maintain, and extend the solution without long-term dependency.
+      </li>
+
+      <li class="reveal delay-2">
+        <strong>Predictable performance and cost.</strong>
+        Design decisions balance accuracy, latency, and infrastructure spend so the
+        system remains reliable and affordable as usage grows.
+      </li>
     </ul>
   </section>
 

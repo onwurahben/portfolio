@@ -7,17 +7,17 @@
 
 /* Back Navigation Breadcrumb */
 .back-home {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 1600px;
+    margin: 4rem auto 0;
+    padding: 0 2rem;
     text-decoration: none;
     color: var(--text-color);
     font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     opacity: 0.6;
@@ -37,18 +37,18 @@
 
 /* Project Hero Section */
 .project-hero {
-    padding: 12rem 2rem 6rem;
-    max-width: 1200px;
+    padding: 4rem 2rem 2rem;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
 .project-hero h1 {
     font-family: var(--font-serif);
-    font-size: clamp(3.2rem, 10vw, 6.5rem);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 600;
-    margin-bottom: 3rem;
-    line-height: 0.95;
-    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     color: var(--text-color);
 }
 
@@ -79,7 +79,7 @@
 
 /* Hero Image Showcase */
 .project-showcase {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 4rem auto;
     padding: 0 2rem;
 }
@@ -108,26 +108,74 @@
 .project-content-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
-    gap: 8rem;
-    max-width: 1200px;
-    margin: 6rem auto;
+    gap: 6rem;
+    max-width: 1600px;
+    margin: 4rem auto;
     padding: 0 2rem;
 }
 
-.main-content h2 {
+/* New full-width container for body content */
+.project-body-full {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.project-body-full section {
+    margin-bottom: 4rem;
+}
+
+.main-content h2,
+.project-body-full h2 {
     font-family: var(--font-serif);
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    text-align: left;
     line-height: 1.1;
     color: var(--text-color);
 }
 
-.main-content p {
+.main-content p,
+.project-body-full p {
     font-family: var(--font-sans);
     font-size: 1.3rem;
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 2.5rem;
+    max-width: 75ch;
+    /* Improve readability */
+}
+
+/* List Styling */
+.main-content ul,
+.project-body-full ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2.5rem;
+    max-width: 75ch;
+    /* Improve readability */
+}
+
+.main-content ul li,
+.project-body-full ul li {
+    position: relative;
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    /* Pad inwards from the left */
+}
+
+.main-content ul li::before,
+.project-body-full ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 /* Detail Sidebar (Right Column) */
@@ -162,12 +210,7 @@
         gap: 4rem;
     }
 
-    .back-home {
-        top: 2rem;
-        left: 2rem;
-    }
-
     .project-hero {
-        padding-top: 8rem;
+        padding-top: 4rem;
     }
 }

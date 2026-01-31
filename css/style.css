@@ -1,8 +1,10 @@
+/* design system */
 :root {
   --bg-color: #fcfaf7;
   --text-color: #1a1a1a;
   --text-muted: #4a4a4a;
-  --accent-color: #9d8df1;
+  --accent-color: #6385fd;
+  /* --accent-color: #9d8df1; */
   --font-serif: 'Fraunces', serif;
   --font-sans: 'Outfit', sans-serif;
   --grain-opacity: 0.14;
@@ -102,6 +104,26 @@ body::after {
   transform: translateY(-2px);
   background: var(--text-color);
   color: var(--bg-color);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--accent-color);
+  font-weight: 500;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
 }
 
 /* Hero Identity Layout */
@@ -228,6 +250,12 @@ body::after {
   max-width: 600px;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .hero-visual {
   position: absolute;
   top: 50%;
@@ -263,7 +291,7 @@ body::after {
 
 /* Capabilities / Services */
 .capabilities {
-  padding: 7rem 2rem;
+  padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -309,7 +337,7 @@ body::after {
 
 /* The Stack / Skill Stack */
 .stack-section {
-  padding: 7rem 2rem;
+  padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -325,13 +353,18 @@ body::after {
   margin-bottom: 4rem;
 }
 
+.stack-tier:last-child {
+  margin-bottom: 0;
+}
+
 .stack-tier h4 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--accent-color);
   margin-bottom: 1.5rem;
-  opacity: 0.8;
+  opacity: 1;
+  font-weight: 700;
 }
 
 .stack-tags {
@@ -340,14 +373,52 @@ body::after {
   gap: 1rem;
 }
 
+.stack-tags .meta-tag {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.stack-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stack-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stack-graphic {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  opacity: 0.8;
+}
+
 @media (max-width: 992px) {
   .capability-grid {
     grid-template-columns: 1fr;
   }
+
+  .stack-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .stack-visual {
+    order: -1;
+    /* Show image above text on mobile */
+    margin-bottom: 2rem;
+  }
 }
 
 .projects {
-  padding: 7rem 2rem;
+  padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -500,7 +571,7 @@ body::after {
 
 /* Philosophy / How I Build */
 .philosophy {
-  padding: 7rem 2rem;
+  padding: 4rem 2rem;
   background: var(--bg-color);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -513,6 +584,15 @@ body::after {
   text-align: center;
 }
 
+.philosophy-intro {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .philosophy ul {
   max-width: 800px;
   margin: 0 auto;
@@ -521,13 +601,23 @@ body::after {
 }
 
 .philosophy ul li {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-size: 1.25rem;
   border-left: 2px solid var(--accent-color);
   padding-left: 1.5rem;
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
+
+.philosophy ul li strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+}
+
 
 .philosophy ul li:hover {
   opacity: 1;
@@ -606,6 +696,10 @@ footer .links a:hover::after {
   .hero-text p {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 
   .profile-meta {
