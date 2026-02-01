@@ -22,11 +22,11 @@
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
-        Back to archive
+        Back to homepage
     </a>
 
     <header class="project-hero reveal">
-        <span class="section-id">MULTIMODAL_AI / 02</span>
+        <span class="section-id">MULTIMODAL_AI / 01</span>
         <h1>AI Voice Assistant</h1>
 
         <div class="project-meta-grid">
@@ -40,7 +40,7 @@
             </div>
             <div class="meta-item">
                 <h5>Stack</h5>
-                <p>Whisper, LLaMA 3, Groq</p>
+                <p>Whisper, LLaMA 3, Google TTS</p>
             </div>
         </div>
     </header>
@@ -135,6 +135,11 @@
                 <li>Audio is streamed back to the user</li>
                 <li>Session-based memory maintains conversational context</li>
             </ul>
+
+            <div class="architecture-diagram">
+                <img src="../images/voice-architecture.svg" alt="Voice AI Assistant Architecture Diagram">
+            </div>
+
             <p>
                 This architecture ensures both responsiveness and cost efficiency.
             </p>
@@ -166,7 +171,7 @@
             </p>
             <ul>
                 <li>ElevenLabs for premium, human-like voices</li>
-                <li>Google Cloud TTS as a reliable fallback</li>
+                <li>Google Cloud TTS as a reliable low-cost fallback</li>
             </ul>
             <p>
                 This design avoids single-provider lock-in and improves system resilience.
@@ -274,10 +279,11 @@
         <section class="closing reveal">
             <h2>Why This Project Matters</h2>
             <p>
-                This project reflects my approach to AI engineering:
-                <strong>building systems that feel natural to use, scale responsibly, and perform reliably under
-                    real constraints — not just impressive demos.</strong>
+                Voice interfaces succeed or fail on responsiveness and conversational flow.
+                This project focuses on reducing latency and preserving context so interactions
+                feel natural rather than fragmented or delayed.
             </p>
+
         </section>
 
     </div>

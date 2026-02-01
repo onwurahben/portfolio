@@ -22,7 +22,7 @@
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
-        Back to archive
+        Back to homepage
     </a>
 
     <header class="project-hero reveal">
@@ -135,7 +135,13 @@
                 <li>Approved drafts are persisted to a database</li>
                 <li>Humans review and approve via web dashboard or Telegram</li>
                 <li>Final content is prepared for publishing workflows</li>
+                <li>The entire workflow can be sheduled to run daily through Github actions</li>
             </ul>
+
+            <div class="architecture-diagram">
+                <img src="../images/redraft-architecture.svg" alt="Redraft Content System Architecture Diagram">
+            </div>
+
             <p>
                 This design cleanly separates generation, evaluation, storage, and human oversight.
             </p>
@@ -151,10 +157,11 @@
                 This separation mirrors real editorial workflows and avoids the weaknesses of single-model systems.
             </p>
 
-            <h3>Recursive Evaluation Loop</h3>
+            <h3>Cost-efficient Recursive Evaluation Loop</h3>
             <p>
                 Instead of regenerating blindly, the system feeds structured evaluator feedback back into the generator,
-                improving quality iteratively and reducing prompt heaviness.
+                improving quality iteratively and reducing prompt heaviness. After max_retries are reached, the draft is
+                handed over to a human.
             </p>
 
             <h3>Human-in-the-Loop (HITL) Design</h3>
@@ -231,6 +238,7 @@
                 <li>AI Automation & Scheduling</li>
                 <li>Production Deployment with Docker</li>
                 <li>Business-Aligned AI System Design</li>
+                <li>Prompt Engineering</li>
             </ul>
         </section>
 
@@ -249,10 +257,11 @@
         <section class="closing reveal">
             <h2>Why This Project Matters</h2>
             <p>
-                Redraft shows how I approach AI engineering:
-                <strong>designing systems that generate value, enforce quality, and scale responsibly — not just
-                    text.</strong>
+                Redraft demonstrates how AI-generated content can be treated as a controlled
+                system rather than an uncontrolled output — where cost-efficency, quality, consistency, and
+                approval are built into the workflow, not handled after the fact.
             </p>
+
         </section>
 
     </div>

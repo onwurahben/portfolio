@@ -1,0 +1,85 @@
+<svg width="1200" height="460" viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box {
+        fill: #ffffff;
+        stroke: #d1d5db;
+        stroke-width: 1.2;
+        rx: 10;
+      }
+      .core {
+        stroke: #2563eb;
+        stroke-width: 1.6;
+      }
+      .arrow {
+        stroke: #9ca3af;
+        stroke-width: 1.2;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+      .label {
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 13px;
+        fill: #111827;
+        font-weight: 500;
+      }
+      .muted {
+        font-size: 12px;
+        fill: #6b7280;
+      }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- USER -->
+  <rect x="40" y="200" width="170" height="60" class="box"/>
+  <text x="125" y="228" text-anchor="middle" class="label">User Query</text>
+  <text x="125" y="246" text-anchor="middle" class="muted">Natural language input</text>
+
+  <!-- QUERY EMBEDDING -->
+  <rect x="260" y="200" width="220" height="60" class="box"/>
+  <text x="370" y="225" text-anchor="middle" class="label">Query Embedding</text>
+  <text x="370" y="245" text-anchor="middle" class="muted">MiniLM (sentence-transformers)</text>
+
+  <!-- VECTOR DB -->
+  <rect x="540" y="70" width="240" height="70" class="box"/>
+  <text x="660" y="100" text-anchor="middle" class="label">Pinecone Vector Database</text>
+  <text x="660" y="120" text-anchor="middle" class="muted">Document embeddings</text>
+
+  <!-- RETRIEVAL -->
+  <rect x="540" y="200" width="240" height="60" class="box"/>
+  <text x="660" y="225" text-anchor="middle" class="label">Top-K Semantic Retrieval</text>
+  <text x="660" y="245" text-anchor="middle" class="muted">Similarity search</text>
+
+  <!-- PROMPT ASSEMBLY -->
+  <rect x="540" y="320" width="240" height="60" class="box"/>
+  <text x="660" y="345" text-anchor="middle" class="label">Prompt Assembly</text>
+  <text x="660" y="365" text-anchor="middle" class="muted">Context + system instructions</text>
+
+  <!-- LLM -->
+  <rect x="820" y="190" width="160" height="80" class="box core"/>
+  <text x="900" y="220" text-anchor="middle" class="label">Llama 3</text>
+  <text x="900" y="240" text-anchor="middle" class="muted">via Groq API</text>
+  <text x="900" y="258" text-anchor="middle" class="muted">Low-latency inference</text>
+
+  <!-- OUTPUT -->
+  <rect x="1020" y="200" width="160" height="60" class="box"/>
+  <text x="1100" y="228" text-anchor="middle" class="label">Response Output</text>
+  <text x="1100" y="246" text-anchor="middle" class="muted">Chat UI · API · App</text>
+
+  <!-- ARROWS -->
+  <path d="M210 230 L260 230" class="arrow"/>
+  <path d="M480 230 L540 230" class="arrow"/>
+  <path d="M660 140 L660 200" class="arrow"/>
+  <path d="M660 260 L660 320" class="arrow"/>
+  <path d="M780 230 L820 230" class="arrow"/>
+  <path d="M980 230 L1020 230" class="arrow"/>
+
+  <!-- INGESTION NOTE -->
+  <text x="660" y="40" text-anchor="middle" class="muted">
+    Document ingestion → chunking → embedding (MiniLM)
+  </text>
+</svg>

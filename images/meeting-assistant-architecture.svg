@@ -1,0 +1,98 @@
+<svg width="1400" height="520" viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box {
+        fill: #ffffff;
+        stroke: #d1d5db;
+        stroke-width: 1.2;
+        rx: 10;
+      }
+      .core {
+        stroke: #2563eb;
+        stroke-width: 1.6;
+      }
+      .arrow {
+        stroke: #9ca3af;
+        stroke-width: 1.2;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+      .label {
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 13px;
+        fill: #111827;
+        font-weight: 500;
+      }
+      .muted {
+        font-size: 12px;
+        fill: #6b7280;
+      }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- INPUT -->
+  <rect x="40" y="230" width="200" height="60" class="box"/>
+  <text x="140" y="258" text-anchor="middle" class="label">Meeting Audio</text>
+  <text x="140" y="276" text-anchor="middle" class="muted">MP3 / WAV upload</text>
+
+  <!-- STT -->
+  <rect x="300" y="230" width="220" height="60" class="box core"/>
+  <text x="410" y="255" text-anchor="middle" class="label">Speech-to-Text</text>
+  <text x="410" y="275" text-anchor="middle" class="muted">Deepgram / Whisper</text>
+
+  <!-- TRANSCRIPT STRUCTURING -->
+  <rect x="580" y="120" width="240" height="60" class="box"/>
+  <text x="700" y="145" text-anchor="middle" class="label">Transcript Structuring</text>
+  <text x="700" y="165" text-anchor="middle" class="muted">Cleanup · timestamps</text>
+
+  <!-- DIARIZATION -->
+  <rect x="580" y="230" width="240" height="60" class="box"/>
+  <text x="700" y="255" text-anchor="middle" class="label">Speaker Diarization</text>
+  <text x="700" y="275" text-anchor="middle" class="muted">Speaker attribution</text>
+
+  <!-- LLM PROCESSING -->
+  <rect x="880" y="230" width="240" height="60" class="box core"/>
+  <text x="1000" y="255" text-anchor="middle" class="label">LLM Processing</text>
+  <text x="1000" y="275" text-anchor="middle" class="muted">Summaries · insights · actions</text>
+
+  <!-- UI LAYER -->
+  <rect x="880" y="120" width="240" height="60" class="box"/>
+  <text x="1000" y="145" text-anchor="middle" class="label">Web UI</text>
+  <text x="1000" y="165" text-anchor="middle" class="muted">Review · export · delivery</text>
+
+  <!-- REPORT -->
+  <rect x="1160" y="90" width="200" height="60" class="box"/>
+  <text x="1260" y="118" text-anchor="middle" class="label">PDF Report</text>
+  <text x="1260" y="136" text-anchor="middle" class="muted">Formatted output</text>
+
+  <!-- EMAIL -->
+  <rect x="1160" y="170" width="200" height="60" class="box"/>
+  <text x="1260" y="198" text-anchor="middle" class="label">Email Delivery</text>
+  <text x="1260" y="216" text-anchor="middle" class="muted">Participants / stakeholders</text>
+
+  <!-- ARROWS -->
+  <path d="M240 260 L300 260" class="arrow"/>
+  <path d="M520 260 L580 260" class="arrow"/>
+
+  <!-- Structuring → Diarization -->
+  <path d="M700 180 L700 230" class="arrow"/>
+
+  <!-- Diarization → LLM -->
+  <path d="M820 260 L880 260" class="arrow"/>
+
+  <!-- LLM → UI -->
+  <path d="M1000 230 L1000 180" class="arrow"/>
+
+  <!-- UI → Outputs (clean horizontal branching) -->
+  <path d="M1120 140 L1160 120" class="arrow"/>
+  <path d="M1120 160 L1160 200" class="arrow"/>
+
+  <!-- NOTE -->
+  <text x="700" y="90" text-anchor="middle" class="muted">
+    Speaker-aware transcript processing before summarization
+  </text>
+</svg>

@@ -417,6 +417,7 @@ body::after {
   }
 }
 
+/* Projects */
 .projects {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -452,6 +453,7 @@ body::after {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   min-height: 550px;
   /* Ensure uniform size */
 }
@@ -524,7 +526,11 @@ body::after {
   max-width: 400px;
 }
 
-.project-card span {
+.project-card .meta-tag {
+  margin-bottom: 0.5rem;
+}
+
+.project-card span:not(.meta-tag) {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent-color);
@@ -633,10 +639,27 @@ footer {
 
 footer p {
   margin-bottom: 2rem;
+  margin-top: 1rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+}
+
+footer h2 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+footer .copyright {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  opacity: 0.7;
 }
 
 footer .links a {

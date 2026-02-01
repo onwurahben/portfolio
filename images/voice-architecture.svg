@@ -1,0 +1,85 @@
+<svg width="1400" height="460" viewBox="0 0 1400 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box {
+        fill: #ffffff;
+        stroke: #d1d5db;
+        stroke-width: 1.2;
+        rx: 10;
+      }
+      .core {
+        stroke: #2563eb;
+        stroke-width: 1.6;
+      }
+      .arrow {
+        stroke: #9ca3af;
+        stroke-width: 1.2;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+      .label {
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 13px;
+        fill: #111827;
+        font-weight: 500;
+      }
+      .muted {
+        font-size: 12px;
+        fill: #6b7280;
+      }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- USER AUDIO -->
+  <rect x="40" y="200" width="170" height="60" class="box"/>
+  <text x="125" y="228" text-anchor="middle" class="label">User Speech</text>
+  <text x="125" y="246" text-anchor="middle" class="muted">Microphone input</text>
+
+  <!-- STT -->
+  <rect x="260" y="200" width="220" height="60" class="box"/>
+  <text x="370" y="225" text-anchor="middle" class="label">Speech-to-Text</text>
+  <text x="370" y="245" text-anchor="middle" class="muted">Whisper (via Groq)</text>
+
+  <!-- MEMORY -->
+  <rect x="540" y="80" width="240" height="70" class="box"/>
+  <text x="660" y="110" text-anchor="middle" class="label">Conversation Memory</text>
+  <text x="660" y="130" text-anchor="middle" class="muted">Session context</text>
+
+  <!-- PROMPT -->
+  <rect x="540" y="200" width="240" height="60" class="box"/>
+  <text x="660" y="225" text-anchor="middle" class="label">Prompt Assembly</text>
+  <text x="660" y="245" text-anchor="middle" class="muted">Transcript + history</text>
+
+  <!-- LLM -->
+  <rect x="820" y="190" width="160" height="80" class="box core"/>
+  <text x="900" y="220" text-anchor="middle" class="label">Llama 3</text>
+  <text x="900" y="240" text-anchor="middle" class="muted">via Groq API</text>
+  <text x="900" y="258" text-anchor="middle" class="muted">Reasoning</text>
+
+  <!-- TTS -->
+  <rect x="1020" y="190" width="180" height="80" class="box"/>
+  <text x="1110" y="220" text-anchor="middle" class="label">Text-to-Speech</text>
+  <text x="1110" y="240" text-anchor="middle" class="muted">ElevenLabs / Google</text>
+
+  <!-- OUTPUT -->
+  <rect x="1240" y="200" width="140" height="60" class="box"/>
+  <text x="1310" y="228" text-anchor="middle" class="label">Audio Output</text>
+  <text x="1310" y="246" text-anchor="middle" class="muted">Spoken response</text>
+
+  <!-- ARROWS -->
+  <path d="M210 230 L260 230" class="arrow"/>
+  <path d="M480 230 L540 230" class="arrow"/>
+  <path d="M660 150 L660 200" class="arrow"/>
+  <path d="M780 230 L820 230" class="arrow"/>
+  <path d="M980 230 L1020 230" class="arrow"/>
+  <path d="M1200 230 L1240 230" class="arrow"/>
+
+  <!-- LATENCY NOTE -->
+  <text x="900" y="160" text-anchor="middle" class="muted">
+    Low-latency, real-time inference
+  </text>
+</svg>

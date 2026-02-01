@@ -214,3 +214,34 @@
         padding-top: 4rem;
     }
 }
+
+/* Architecture Diagram Responsive Container */
+.architecture-diagram {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.architecture-diagram img {
+    width: 100%;
+    height: auto;
+    max-width: 1400px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* On smaller screens, allow horizontal scrolling for large diagrams */
+@media (max-width: 1200px) {
+    .architecture-diagram {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .architecture-diagram img {
+        min-width: 800px;
+        width: auto;
+        max-width: none;
+    }
+}

@@ -22,7 +22,7 @@
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
-        Back to archive
+        Back to homepage
     </a>
 
     <header class="project-hero reveal">
@@ -40,7 +40,7 @@
             </div>
             <div class="meta-item">
                 <h5>Stack</h5>
-                <p>Python, OpenAI, Pinecone</p>
+                <p>Python, LangChain, Pinecone</p>
             </div>
         </div>
     </header>
@@ -74,7 +74,7 @@
             </div>
             <div class="sidebar-item">
                 <h6>Infrastructure</h6>
-                <p>Deployed as a scalable microservice with FastAPI and Docker.</p>
+                <p>Deployed as a scalable microservice with Flask and Docker.</p>
             </div>
         </aside>
     </main>
@@ -98,7 +98,7 @@
 
             <p>
                 <strong>The challenge:</strong> build a system that delivers fast, accurate,
-                and context-aware answers — grounded strictly in the uploaded documents.
+                and context-aware answers — grounded strictly in the uploaded business documents.
             </p>
         </section>
 
@@ -108,13 +108,13 @@
 
             <p>
                 DocQuery is a Retrieval-Augmented Generation (RAG) assistant that combines
-                semantic search with LLM reasoning to answer questions directly from private
+                semantic search with ultra-fast LLM reasoning to answer questions directly from private
                 documents.
             </p>
 
             <p>
                 The system retrieves the most relevant document chunks using vector similarity
-                search and injects them into a structured prompt pipeline, ensuring responses
+                search and injects them into a structured prompt pipeline. This ensures responses
                 are both accurate and explainable.
             </p>
         </section>
@@ -133,9 +133,13 @@
                 <li>Results are delivered through a clean chat interface</li>
             </ul>
 
+            <div class="architecture-diagram">
+                <img src="../images/rag-architecture.svg" alt="RAG System Architecture Diagram">
+            </div>
+
             <p>
-                This architecture cleanly separates retrieval, prompt orchestration, and
-                generation, making the system extensible and production-ready.
+                This architecture cleanly separates retrieval, prompt design & orchestration, and
+                response generation, making the system extensible and production-ready.
             </p>
         </section>
 
@@ -238,12 +242,19 @@
 
         <!-- CLOSING -->
         <section class="closing reveal">
+
             <h2>Why This Project Matters</h2>
 
             <p>
-                This project reflects how I approach AI engineering:
-                <strong>not just building demos, but designing systems that can realistically ship.</strong>
+                Many AI projects fail after the demo stage due to unreliable behavior and rising operational costs.
             </p>
+
+            <p>
+                This system was designed to avoid those problems by prioritizing
+                deployability, maintainability, and predictable performance from day one.
+            </p>
+
+
         </section>
     </div>
 
