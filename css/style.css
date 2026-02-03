@@ -193,29 +193,52 @@ body::after {
 .profile-meta {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  /* center everything under the image */
   gap: 0.2rem;
 }
 
-.profile-meta .name {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
+.profile-meta .icons {
+  display: flex;
+  /* horizontal layout */
+  flex-direction: row;
+  gap: 0.75rem;
+  margin: 1rem;
+
 }
 
-.profile-meta .status {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  font-weight: 600;
+.profile-meta .social-icon {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  margin: 0.5rem;
+
 }
 
-.profile-meta .status:last-child {
-  color: var(--accent-color);
+.profile-meta .social-icon img {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  display: block;
 }
+
+
+.social-icon img {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+
+}
+
+.social-icon img:hover {
+  transform: scale(1.2);
+  filter: grayscale(0%) brightness(1.1);
+  opacity: 0.85;
+}
+
 
 /* Hero */
 .hero {
