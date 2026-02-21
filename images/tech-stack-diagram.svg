@@ -1,0 +1,86 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .layer-bg {
+        fill: #ffffff;
+        stroke: #d1d5db;
+        stroke-width: 1;
+        rx: 12;
+      }
+      .node {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1;
+        rx: 6;
+      }
+      .node-text {
+        font-family: 'Outfit', sans-serif;
+        font-size: 10px;
+        fill: #1a1a1a;
+        font-weight: 500;
+      }
+      .connection {
+        stroke: #9ca3af;
+        stroke-width: 1;
+        fill: none;
+        stroke-dasharray: 4, 3;
+        opacity: 0.5;
+      }
+      .accent-line {
+        stroke: #6385fd;
+        stroke-width: 1.5;
+        fill: none;
+        opacity: 0.3;
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND DECORATION -->
+  <path d="M200 50 L200 450" class="accent-line"/>
+  <circle cx="200" cy="50" r="3" fill="#6385fd" opacity="0.5"/>
+  <circle cx="200" cy="450" r="3" fill="#6385fd" opacity="0.5"/>
+
+  <!-- LAYER 1: INTELLIGENCE -->
+  <rect x="50" y="40" width="300" height="100" class="layer-bg"/>
+  
+  <rect x="75" y="65" width="115" height="25" class="node"/>
+  <text x="132.5" y="81" text-anchor="middle" class="node-text">LLM Orchestration</text>
+  
+  <rect x="210" y="65" width="115" height="25" class="node"/>
+  <text x="267.5" y="81" text-anchor="middle" class="node-text">Graph Logic</text>
+  
+  <rect x="142.5" y="100" width="115" height="25" class="node"/>
+  <text x="200" y="116" text-anchor="middle" class="node-text">RAG Strategy</text>
+
+  <!-- LAYER 2: DATA -->
+  <rect x="50" y="200" width="300" height="100" class="layer-bg"/>
+  
+  <rect x="75" y="225" width="115" height="25" class="node"/>
+  <text x="132.5" y="241" text-anchor="middle" class="node-text">Vector Databases</text>
+  
+  <rect x="210" y="225" width="115" height="25" class="node"/>
+  <text x="267.5" y="241" text-anchor="middle" class="node-text">PostgreSQL</text>
+  
+  <rect x="142.5" y="260" width="115" height="25" class="node"/>
+  <text x="200" y="276" text-anchor="middle" class="node-text">Embedding Pipelines</text>
+
+  <!-- LAYER 3: OPERATIONS -->
+  <rect x="50" y="360" width="300" height="100" class="layer-bg"/>
+  
+  <rect x="75" y="385" width="115" height="25" class="node"/>
+  <text x="132.5" y="401" text-anchor="middle" class="node-text">Cloud (AWS/HF)</text>
+  
+  <rect x="210" y="385" width="115" height="25" class="node"/>
+  <text x="267.5" y="401" text-anchor="middle" class="node-text">Dockerization</text>
+  
+  <rect x="142.5" y="420" width="115" height="25" class="node"/>
+  <text x="200" y="436" text-anchor="middle" class="node-text">API Endpoints</text>
+
+  <!-- CONNECTIONS -->
+  <path d="M200 140 L200 200" class="connection"/>
+  <path d="M200 300 L200 360" class="connection"/>
+  
+  <!-- INTERACTIVE NODES (Subtle circles) -->
+  <circle cx="200" cy="170" r="4" fill="#ffffff" stroke="#6385fd" stroke-width="1"/>
+  <circle cx="200" cy="330" r="4" fill="#ffffff" stroke="#6385fd" stroke-width="1"/>
+</svg>

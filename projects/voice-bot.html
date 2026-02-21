@@ -286,25 +286,34 @@
 
         </section>
 
-    </div>
+        <!-- CALL TO ACTION -->
+        <section class="project-cta reveal">
+            <h2>Want such a system custom built for your business?</h2>
+            <p>
+                I specialize in designing and deploying production-grade AI agents that solve real operational
+                challenges.
+                Let's discuss how we can automate your high-stakes workflows.
+            </p>
+            <a href="mailto:your-email@example.com" class="cta-button">Contact Me</a>
+        </section>
 
-    <footer>
-        <p>© 2026 Ben Onwurah</p>
-    </footer>
+        <footer>
+            <p>© 2026 Ben Onwurah</p>
+        </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.1 });
 
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-    </script>
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            });
+        </script>
 </body>
 
 </html>

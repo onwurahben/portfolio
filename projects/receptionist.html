@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamilyHealth AI Receptionist — Ben Onwurah</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="project-detail-body">
+
+    <a href="../index.html" class="back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to homepage
+    </a>
+
+    <header class="project-hero reveal">
+        <span class="section-id">VOICE_AI / 02</span>
+        <h1>FamilyHealth AI Receptionist (Voice/Chat)</h1>
+
+        <div class="project-meta-grid">
+            <div class="meta-item">
+                <h5>Role</h5>
+                <p>AI Systems Engineer</p>
+            </div>
+            <div class="meta-item">
+                <h5>Focus</h5>
+                <p>Live Scheduling & RAG</p>
+            </div>
+            <div class="meta-item">
+                <h5>Stack</h5>
+                <p>FastAPI, LangGraph, Vapi</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-showcase">
+        <video autoplay loop muted playsinline>
+            <source src="../images/rag-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <main class="project-content-grid">
+        <div class="main-content reveal">
+            <p class="intro">
+                I designed and deployed a state-of-the-art AI voice receptionist for FamilyHealth Clinic that delivers
+                low-latency, human-like conversations while handling appointment scheduling, FAQs, and operational
+                workflows in real time.
+            </p>
+
+            <p class="meta">
+                ▶ <a href="#" target="_blank">Live Voice Deployment: Vapi Integration</a><br>
+                🎙️ <strong>Tech Stack:</strong> Python · FastAPI · LangGraph · Pinecone · Groq · Google Calendar API ·
+                Twilio · SQLite
+            </p>
+        </div>
+
+        <aside class="detail-sidebar reveal delay-1">
+            <div class="sidebar-item">
+                <h6>Orchestration</h6>
+                <p>LangGraph (logic & state control)</p>
+                <p>Vapi (telephony & voice orchestration)</p>
+            </div>
+            <div class="sidebar-item">
+                <h6>Performance</h6>
+                <p>Sub-second (~900ms) response latency in multi-turn conversations</p>
+            </div>
+        </aside>
+    </main>
+
+    <div class="project-body-full">
+        <!-- PROBLEM -->
+        <section class="reveal">
+            <h2>The Problem</h2>
+            <p>
+                Dental and medical clinics face constant front-desk overload. Staff must manage high call volumes,
+                complex appointment scheduling, and repetitive FAQs while providing a high level of patient care.
+            </p>
+            <p>
+                Generic chatbots and traditional IVR systems fail because they:
+            </p>
+            <ul>
+                <li>Feel robotic, rigid, and frustrating to use</li>
+                <li>Lack real-time access to operational data like calendars</li>
+                <li>Struggle with multi-turn memory and complex intent</li>
+                <li>Miss critical calls outside of business hours</li>
+            </ul>
+            <p>
+                <strong>The challenge:</strong> build a voice-first AI receptionist that feels natural, responds
+                instantly, remembers context, and books real appointments — without introducing operational risk.
+            </p>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="reveal">
+            <h2>The Solution</h2>
+            <p>
+                FamilyHealth Voice AI is a real-time conversational receptionist powered by a directed orchestration
+                graph and low-latency LLM inference.
+            </p>
+            <p>
+                Unlike static voice bots, this system performs structured reasoning across multiple services while
+                maintaining conversational fluidity under one second response times. The system combines precise intent
+                classification with RAG-based knowledge retrieval and live calendar integration.
+            </p>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="reveal">
+            <h2>System Architecture</h2>
+            <p>
+                The system utilizes a DAG-based (Directed Acyclic Graph) architecture to ensure deterministic routing
+                and predictable state transitions:
+            </p>
+            <ul>
+                <li><strong>Entry:</strong> Voice calls (Vapi) or web chat messages enter a LangGraph DAG</li>
+                <li><strong>Classification:</strong> Intent is analyzed using Groq (Llama-3.1-8B)</li>
+                <li><strong>Parallel Processing:</strong> Pinecone RAG results are pre-fetched while routing occurs</li>
+                <li><strong>Deterministic Routing:</strong> Flow is directed to specialized nodes (FAQ, Booking, etc.)
+                </li>
+                <li><strong>Logic Flow:</strong> Booking flow interacts with Google Calendar API for live availability
+                </li>
+                <li><strong>Reasoning:</strong> Primary conversational logic handled by Groq GPT-OSS-20B</li>
+                <li><strong>Persistence:</strong> Conversation state is maintained via a SQLite checkpointer or Redis
+                </li>
+                <li><strong>Streaming:</strong> Responses are streamed via SSE for minimal perceived latency</li>
+            </ul>
+
+            <div class="architecture-diagram">
+                <img src="../images/receptionist-architecture.svg" alt="Receptionist AI Architecture Diagram">
+            </div>
+
+            <p>
+                This design ensures deterministic routing, parallel task execution, and predictable state transitions.
+            </p>
+        </section>
+
+        <!-- ENGINEERING DECISIONS -->
+        <section class="reveal">
+            <h2>Key Engineering Decisions</h2>
+
+            <h3>Orchestration: LangChain LangGraph</h3>
+            <p>
+                Chosen for graph-based state control rather than linear chains. This prevents memory resets and allows
+                branching logic for booking, FAQs, and cancellations without conversational drift.
+            </p>
+
+            <h3>Ultra-Low Latency Inference: Groq</h3>
+            <p>
+                Groq’s LPU stack enables sub-second responses, critical for voice systems where silence degrades user
+                trust. Intent classification and reasoning are separated across models to balance speed and depth.
+            </p>
+
+            <h3>RAG Infrastructure: local BGE-Small & Pinecone</h3>
+            <p>
+                Used for real-time retrieval of clinic procedures, pricing, and operational FAQs. I chose a local
+                <strong>BGE-Small</strong> embedding model to ensure data privacy and zero-latency embedding API calls.
+                Parallel async pre-fetching reduces perceived latency by 30–40%.
+            </p>
+
+            <h3>Scheduling Integration: Google Calendar API</h3>
+            <p>
+                Direct API integration enables live availability checks and conflict prevention, transforming the
+                assistant from an informational bot into a functional operational system.
+            </p>
+
+            <h3>Latency Masking Strategy</h3>
+            <p>
+                Voice systems cannot tolerate silence. To ensure continuity, I implemented:
+            </p>
+            <ul>
+                <li>Async RAG pre-fetch during initial intent classification</li>
+                <li>Streaming responses via Server-Sent Events (SSE)</li>
+                <li>Status signals and filler acknowledgments during heavy API call execution</li>
+            </ul>
+        </section>
+
+        <!-- MULTI-CHANNEL DELIVERY -->
+        <section class="reveal">
+            <h2>Multi-Channel Delivery: Voice & Web</h2>
+            <p>
+                The system is designed for high-stakes interactions across two distinct layers, ensuring consistent
+                intelligence regardless of the medium.
+            </p>
+
+            <h3>Native Voice (Vapi Integration)</h3>
+            <p>
+                The backend is a <strong>Custom LLM Provider</strong> for Vapi, implementing the protocol via SSE. It
+                maps call IDs to LangGraph threads to maintain persistent state and conversational memory throughout the
+                call.
+            </p>
+
+            <h3>Visual Web Chat</h3>
+            <p>
+                The companion web interface built in Typescript provides real-time streaming with status indicators for
+                RAG and Calendar
+                lookups. Each session maintains thread persistence, allowing users to switch between voice and text
+                without losing context.
+            </p>
+        </section>
+
+        <!-- CAPABILITIES -->
+        <section class="reveal">
+            <h2>Core Capabilities</h2>
+            <ul>
+                <li>Natural conversational voice flow with barge-in support</li>
+                <li>Multi-turn memory with persistent conversational state</li>
+                <li>RAG-powered FAQ handling for procedures and clinic data</li>
+                <li>Real-time appointment booking and cancellation via Google Calendar</li>
+                <li>Multi-channel delivery (Synchronous Voice + Asynchronous Web Chat)</li>
+                <li>Automated SMS notifications and confirmations via Twilio</li>
+            </ul>
+        </section>
+
+        <!-- OUTCOME -->
+        <section class="reveal">
+            <h2>Outcome & Impact</h2>
+            <ul>
+                <li>Delivered a fully operational AI receptionist that operates autonomously via Voice and Web Chat 24/7
+                </li>
+                <li>Significantly reduced front-desk workload by handling routine FAQs and scheduling</li>
+                <li>Maintained sub-second conversational responsiveness across diverse intents</li>
+                <li>Built a modular architecture adaptable for various service offices and practices</li>
+            </ul>
+
+            <p>
+                This project demonstrates applied AI engineering beyond experimentation —
+                with real deployment constraints in mind.
+            </p>
+        </section>
+
+        <!-- DEMO -->
+        <section class="reveal">
+            <h2>Live Demo</h2>
+
+            <p>
+                ▶ <a href="#" target="_blank">Try the system live on Hugging Face</a><br>
+                An interactive demo running in a production-style environment.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="reveal">
+            <h2>Skills Demonstrated</h2>
+            <ul>
+                <li>Voice AI System Design & Deployment</li>
+                <li>Graph-Based Orchestration (LangGraph)</li>
+                <li>RAG for Real-Time Knowledge Recall</li>
+                <li>Low-Latency LLM Inference Optimization (Groq)</li>
+                <li>Parallel Async Processing (Pre-fetching)</li>
+                <li>API Integration (Google Calendar, Twilio)</li>
+                <li>Advanced State Management & Memory</li>
+            </ul>
+        </section>
+
+        <!-- IMPROVEMENTS -->
+        <section class="reveal">
+            <h2>Planned Improvements</h2>
+            <ul>
+                <li>Advanced analytics dashboard for call performance and booking success</li>
+                <li>Multi-location and role-based escalation paths</li>
+                <li>Structured evaluation benchmarks for latency and intent accuracy</li>
+            </ul>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing reveal">
+            <h2>Why This Project Matters</h2>
+            <p>
+                Voice interfaces demand more than accurate responses — they require timing,
+                reliability, and operational integration. This system shows how Voice AI can
+                move beyond scripted interactions to become a functional part of real-world
+                service infrastructure.
+            </p>
+        </section>
+    </div>
+
+    <!-- CALL TO ACTION -->
+    <section class="project-cta reveal">
+        <h2>Want such a system custom built for your business?</h2>
+        <p>
+            I specialize in designing and deploying production-grade AI agents that solve real operational challenges.
+            Let's discuss how we can automate your high-stakes workflows.
+        </p>
+        <a href="mailto:your-email@example.com" class="cta-button">Contact Me</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Ben Onwurah</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

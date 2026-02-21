@@ -230,7 +230,6 @@ body::after {
   display: block;
   transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
-
 }
 
 .social-icon img:hover {
@@ -247,7 +246,7 @@ body::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
   position: relative;
 }
@@ -313,8 +312,43 @@ body::after {
 }
 
 /* Capabilities / Services */
+/* ROI Feature Section */
+.roi-section {
+  padding: 5rem 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.roi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.roi-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  max-width: 20ch;
+  line-height: 1.1;
+  color: var(--text-color);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roi-section p {
+  max-width: 750px;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 auto 3rem;
+}
+
 .capabilities {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -331,6 +365,7 @@ body::after {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+
 
 .capability-card {
   background: #ffffff;
@@ -360,7 +395,7 @@ body::after {
 
 /* The Stack / Skill Stack */
 .stack-section {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -397,10 +432,20 @@ body::after {
 }
 
 .stack-tags .meta-tag {
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
   background: white;
   border-color: rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.stack-tags .meta-tag:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  background: #f0f7ff;
 }
 
 .stack-container {
@@ -442,7 +487,7 @@ body::after {
 
 /* Projects */
 .projects {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -579,7 +624,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 2.5rem auto;
+  margin: 0 auto;
   max-width: 1200px;
   padding: 0 2rem;
   opacity: 0.2;
@@ -600,7 +645,7 @@ body::after {
 
 /* Philosophy / How I Build */
 .philosophy {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   background: var(--bg-color);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -652,13 +697,44 @@ body::after {
   opacity: 1;
 }
 
+/* Homepage CTA Section */
+.homepage-cta {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #f8fafc;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+}
+
+.homepage-cta h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  max-width: 25ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.1;
+}
+
+.homepage-cta p {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+
 /* Footer */
 footer {
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
   background: var(--bg-color);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 
 footer p {
   margin-bottom: 2rem;
