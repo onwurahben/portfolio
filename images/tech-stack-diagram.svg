@@ -1,86 +1,61 @@
-<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+<svg width="280" height="420" viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .layer-bg {
-        fill: #ffffff;
-        stroke: #d1d5db;
-        stroke-width: 1;
-        rx: 12;
-      }
       .node {
-        fill: #f8fafc;
-        stroke: #e2e8f0;
-        stroke-width: 1;
-        rx: 6;
+        fill: #ffffff;
+        stroke: #e8ecf0;
+        stroke-width: 0.8;
+        rx: 8;
       }
-      .node-text {
-        font-family: 'Outfit', sans-serif;
-        font-size: 10px;
-        fill: #1a1a1a;
-        font-weight: 500;
+      .label {
+        font-family: 'Fraunces', 'Georgia', serif;
+        font-size: 13px;
+        fill: #9ca3af;
+        font-weight: 400;
+        font-style: italic;
       }
-      .connection {
-        stroke: #9ca3af;
-        stroke-width: 1;
-        fill: none;
-        stroke-dasharray: 4, 3;
-        opacity: 0.5;
-      }
-      .accent-line {
+      .arrow {
         stroke: #6385fd;
-        stroke-width: 1.5;
+        stroke-width: 1;
         fill: none;
-        opacity: 0.3;
+        opacity: 0.4;
+        marker-end: url(#arrow);
       }
     </style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6385fd"/>
+    </marker>
   </defs>
 
-  <!-- BACKGROUND DECORATION -->
-  <path d="M200 50 L200 450" class="accent-line"/>
-  <circle cx="200" cy="50" r="3" fill="#6385fd" opacity="0.5"/>
-  <circle cx="200" cy="450" r="3" fill="#6385fd" opacity="0.5"/>
+  <!-- Step 1: Input -->
+  <rect x="65" y="20" width="150" height="44" class="node"/>
+  <text x="140" y="47" text-anchor="middle" class="label">Input</text>
 
-  <!-- LAYER 1: INTELLIGENCE -->
-  <rect x="50" y="40" width="300" height="100" class="layer-bg"/>
-  
-  <rect x="75" y="65" width="115" height="25" class="node"/>
-  <text x="132.5" y="81" text-anchor="middle" class="node-text">LLM Orchestration</text>
-  
-  <rect x="210" y="65" width="115" height="25" class="node"/>
-  <text x="267.5" y="81" text-anchor="middle" class="node-text">Graph Logic</text>
-  
-  <rect x="142.5" y="100" width="115" height="25" class="node"/>
-  <text x="200" y="116" text-anchor="middle" class="node-text">RAG Strategy</text>
+  <path d="M140 64 L140 100" class="arrow"/>
 
-  <!-- LAYER 2: DATA -->
-  <rect x="50" y="200" width="300" height="100" class="layer-bg"/>
-  
-  <rect x="75" y="225" width="115" height="25" class="node"/>
-  <text x="132.5" y="241" text-anchor="middle" class="node-text">Vector Databases</text>
-  
-  <rect x="210" y="225" width="115" height="25" class="node"/>
-  <text x="267.5" y="241" text-anchor="middle" class="node-text">PostgreSQL</text>
-  
-  <rect x="142.5" y="260" width="115" height="25" class="node"/>
-  <text x="200" y="276" text-anchor="middle" class="node-text">Embedding Pipelines</text>
+  <!-- Step 2: Orchestration -->
+  <rect x="65" y="100" width="150" height="44" class="node"/>
+  <text x="140" y="127" text-anchor="middle" class="label">Orchestration</text>
 
-  <!-- LAYER 3: OPERATIONS -->
-  <rect x="50" y="360" width="300" height="100" class="layer-bg"/>
-  
-  <rect x="75" y="385" width="115" height="25" class="node"/>
-  <text x="132.5" y="401" text-anchor="middle" class="node-text">Cloud (AWS/HF)</text>
-  
-  <rect x="210" y="385" width="115" height="25" class="node"/>
-  <text x="267.5" y="401" text-anchor="middle" class="node-text">Dockerization</text>
-  
-  <rect x="142.5" y="420" width="115" height="25" class="node"/>
-  <text x="200" y="436" text-anchor="middle" class="node-text">API Endpoints</text>
+  <path d="M140 144 L140 180" class="arrow"/>
 
-  <!-- CONNECTIONS -->
-  <path d="M200 140 L200 200" class="connection"/>
-  <path d="M200 300 L200 360" class="connection"/>
-  
-  <!-- INTERACTIVE NODES (Subtle circles) -->
-  <circle cx="200" cy="170" r="4" fill="#ffffff" stroke="#6385fd" stroke-width="1"/>
-  <circle cx="200" cy="330" r="4" fill="#ffffff" stroke="#6385fd" stroke-width="1"/>
+  <!-- Step 3: Retrieval -->
+  <rect x="65" y="180" width="150" height="44" class="node"/>
+  <text x="140" y="207" text-anchor="middle" class="label">Retrieval</text>
+
+  <path d="M140 224 L140 260" class="arrow"/>
+
+  <!-- Step 4: Intelligence -->
+  <rect x="65" y="260" width="150" height="44" class="node"/>
+  <text x="140" y="287" text-anchor="middle" class="label">Intelligence</text>
+
+  <path d="M140 304 L140 340" class="arrow"/>
+
+  <!-- Step 5: Response -->
+  <rect x="65" y="340" width="150" height="44" class="node"/>
+  <text x="140" y="367" text-anchor="middle" class="label">Response</text>
+
+  <!-- End dot -->
+  <path d="M140 384 L140 401" class="arrow"/>
+  <circle cx="140" cy="405" r="4" fill="#6385fd" opacity="0.5"/>
 </svg>
